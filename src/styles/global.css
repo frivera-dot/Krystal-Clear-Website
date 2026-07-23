@@ -1,40 +1,94 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/barlow-condensed/600.css";
+@import "@fontsource/barlow-condensed/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
 
 @theme {
-  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  /*
+   * KCS brand system — "uniform green & lobby brass"
+   * Green: the dark green of janitorial work shirts.
+   * Brass: door hardware and elevator trim of the buildings KCS cleans.
+   * Type: Barlow (drawn from California public signage) + IBM Plex Mono
+   * for the work-order / spec-sheet register.
+   */
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", ui-sans-serif, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
-  /* KCS brand — deep navy + crystal teal */
-  --color-navy-50: #f0f5fa;
-  --color-navy-100: #dce8f3;
-  --color-navy-200: #bed3e8;
-  --color-navy-300: #92b4d6;
-  --color-navy-400: #5f8fc0;
-  --color-navy-500: #3d71aa;
-  --color-navy-600: #2d598f;
-  --color-navy-700: #274974;
-  --color-navy-800: #243f61;
-  --color-navy-900: #0b2545;
-  --color-navy-950: #071930;
+  /* uniform green */
+  --color-pine-50: #f0f4f0;
+  --color-pine-100: #dde8de;
+  --color-pine-200: #b9d0bd;
+  --color-pine-300: #8db396;
+  --color-pine-400: #5c9270;
+  --color-pine-500: #3a7a55;
+  --color-pine-600: #2a6647;
+  --color-pine-700: #1f523a;
+  --color-pine-800: #17402e;
+  --color-pine-900: #123227;
+  --color-pine-950: #0b211a;
 
-  --color-crystal-50: #ecfeff;
-  --color-crystal-100: #cff9fe;
-  --color-crystal-200: #a5f0fc;
-  --color-crystal-300: #67e3f9;
-  --color-crystal-400: #22cbee;
-  --color-crystal-500: #06aed4;
-  --color-crystal-600: #088ab2;
-  --color-crystal-700: #0e6f90;
-  --color-crystal-800: #155a75;
-  --color-crystal-900: #164a63;
+  /* lobby brass */
+  --color-brass-50: #faf6ea;
+  --color-brass-100: #f4ead1;
+  --color-brass-200: #e8d6a3;
+  --color-brass-300: #dcc077;
+  --color-brass-400: #cfab52;
+  --color-brass-500: #c09a3e;
+  --color-brass-600: #a5812f;
+  --color-brass-700: #866727;
+  --color-brass-800: #6b5222;
+  --color-brass-900: #57431e;
+
+  /* squared-off corners — floors are laid in straight lines */
+  --radius-sm: 1px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+  --radius-xl: 3px;
+  --radius-2xl: 3px;
+  --radius-3xl: 4px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
 body {
-  @apply font-sans text-slate-700 antialiased;
+  @apply font-sans text-stone-700 antialiased;
+}
+
+/* Display headings: condensed caps, like trade signage */
+h1,
+h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.015em;
+}
+
+/* Work-order eyebrow labels */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
 
 /* Prose defaults for long-form SEO copy */
@@ -43,4 +97,20 @@ body {
 }
 .copy p:last-child {
   @apply mb-0;
+}
+
+/* Signature: wet-floor reflection. Apply to a wrapper containing the
+   original element plus an aria-hidden duplicate with .reflection-copy */
+.reflection-copy {
+  transform: scaleY(-1);
+  mask-image: linear-gradient(to bottom, transparent 58%, rgba(0, 0, 0, 0.2) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 58%, rgba(0, 0, 0, 0.2) 100%);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Visible keyboard focus, brand-colored */
+:focus-visible {
+  outline: 2px solid var(--color-brass-500);
+  outline-offset: 2px;
 }

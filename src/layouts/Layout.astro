@@ -9,9 +9,11 @@ interface Props {
   description: string;
   /** Optional JSON-LD objects rendered as script tags */
   schema?: object[];
+  /** Keep internal pages (brand board, etc.) out of search engines */
+  noindex?: boolean;
 }
 
-const { title, description, schema = [] } = Astro.props;
+const { title, description, schema = [], noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, SITE.domain).href;
 
 const localBusiness = {
@@ -50,6 +52,7 @@ const localBusiness = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:type" content="website" />

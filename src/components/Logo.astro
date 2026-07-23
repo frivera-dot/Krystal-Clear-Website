@@ -1,27 +1,36 @@
 ---
+// KCS wordmark: condensed caps over a brass "gloss line."
+// The wet-floor reflection (the full mark) is opt-in via `reflect` —
+// it needs vertical breathing room, so the compact header omits it.
 interface Props {
   light?: boolean;
+  reflect?: boolean;
 }
-const { light = false } = Astro.props;
+const { light = false, reflect = false } = Astro.props;
 ---
 
-<span class="flex items-center gap-2.5">
-  <svg
-    class="h-9 w-9 shrink-0"
-    viewBox="0 0 40 40"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <rect width="40" height="40" rx="9" class={light ? "fill-crystal-500" : "fill-navy-900"}></rect>
-    <path
-      d="M20 7l3.2 8.3L31 19l-7.8 3.7L20 31l-3.2-8.3L9 19l7.8-3.7L20 7z"
-      class="fill-white"
-    ></path>
-    <path d="M29 8l1.1 2.9L33 12l-2.9 1.1L29 16l-1.1-2.9L25 12l2.9-1.1L29 8z" class={light ? "fill-white" : "fill-crystal-400"}></path>
-  </svg>
+<span class="flex items-center gap-3">
+  <span class="relative inline-flex flex-col items-center leading-none">
+    <span
+      class={`font-display text-[1.7rem] font-bold tracking-[0.04em] ${light ? "text-white" : "text-pine-900"}`}
+      >KCS</span
+    >
+    <span class="mt-[1px] block h-[3px] w-full bg-brass-500"></span>
+    {
+      reflect && (
+        <span
+          aria-hidden="true"
+          class={`reflection-copy absolute top-full mt-[3px] font-display text-[1.7rem] font-bold leading-none tracking-[0.04em] ${light ? "text-white" : "text-pine-900"}`}
+        >
+          KCS
+        </span>
+      )
+    }
+  </span>
   <span class="leading-tight">
-    <span class={`block text-xl font-extrabold tracking-tight ${light ? "text-white" : "text-navy-900"}`}>KCS</span>
-    <span class={`block text-[0.65rem] font-semibold uppercase tracking-[0.14em] ${light ? "text-crystal-300" : "text-crystal-600"}`}>Krystal Clear Service</span>
+    <span class={`block text-[0.95rem] font-semibold tracking-wide ${light ? "text-white" : "text-pine-900"}`}
+      >Krystal Clear Service</span
+    >
+    <span class={`eyebrow block ${light ? "text-brass-300" : "text-brass-600"}`}>Janitorial · Floor Care</span>
   </span>
 </span>

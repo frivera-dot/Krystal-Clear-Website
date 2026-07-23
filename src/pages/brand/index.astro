@@ -1,0 +1,170 @@
+---
+// Internal brand board — for client presentation only (noindex, excluded from sitemap).
+import Layout from "../../layouts/Layout.astro";
+
+const palette = [
+  { name: "Pine 950", hex: "#0b211a", note: "Ink — headlines, footer" },
+  { name: "Pine 900", hex: "#123227", note: "Primary — uniform green" },
+  { name: "Pine 700", hex: "#1f523a", note: "Links, secondary" },
+  { name: "Pine 50", hex: "#f0f4f0", note: "Tinted surfaces" },
+  { name: "Brass 500", hex: "#c09a3e", note: "Accent — CTAs, rules" },
+  { name: "Brass 300", hex: "#dcc077", note: "Accent on dark" },
+  { name: "Stone 700", hex: "#44403b", note: "Body text (warm gray)" },
+  { name: "White", hex: "#ffffff", note: "Primary surface" },
+];
+---
+
+<Layout
+  title="KCS Brand Board — Internal"
+  description="Internal brand direction board for KCS Krystal Clear Service."
+  noindex
+>
+  <section class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+    <p class="eyebrow text-brass-600">Internal — for review with Fidel</p>
+    <h1 class="mt-2 font-display text-4xl font-bold uppercase text-pine-900 sm:text-5xl">KCS Brand Board</h1>
+    <p class="mt-4 max-w-2xl text-lg text-stone-600">
+      Direction: <strong>uniform green &amp; lobby brass</strong>. The dark green of janitorial work shirts, the brass
+      of the door hardware in the buildings KCS cleans, and a wet-floor reflection as the signature — because shine is
+      the product.
+    </p>
+
+    <!-- Logo concepts -->
+    <h2 class="mt-14 font-display text-2xl font-bold uppercase text-pine-900">Logo Concepts</h2>
+
+    <div class="mt-6 grid gap-8 lg:grid-cols-2">
+      <!-- Concept A -->
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">A · Reflection Wordmark</h3>
+          <span class="eyebrow text-brass-600">Recommended — in use</span>
+        </div>
+        <div class="flex flex-col items-center gap-10 bg-white px-6 py-12">
+          <span class="relative inline-flex flex-col items-center leading-none">
+            <span class="font-display text-6xl font-bold tracking-[0.04em] text-pine-900">KCS</span>
+            <span class="mt-1 block h-[5px] w-full bg-brass-500"></span>
+            <span aria-hidden="true" class="reflection-copy absolute top-full mt-2 font-display text-6xl font-bold leading-none tracking-[0.04em] text-pine-900">KCS</span>
+            <span class="mt-16 block text-center">
+              <span class="block text-lg font-semibold tracking-wide text-pine-900">Krystal Clear Service</span>
+              <span class="eyebrow block text-brass-600">Janitorial · Floor Care</span>
+            </span>
+          </span>
+        </div>
+        <div class="border-t border-stone-200 bg-pine-950 px-6 py-10 text-center">
+          <span class="relative inline-flex flex-col items-center leading-none">
+            <span class="font-display text-5xl font-bold tracking-[0.04em] text-white">KCS</span>
+            <span class="mt-1 block h-[4px] w-full bg-brass-500"></span>
+            <span aria-hidden="true" class="reflection-copy absolute top-full mt-1.5 font-display text-5xl font-bold leading-none tracking-[0.04em] text-white">KCS</span>
+          </span>
+        </div>
+        <p class="px-5 py-4 text-sm text-stone-600">
+          The mark is the product: a freshly burnished floor reflects the room. Brass baseline = the gloss line. Works
+          at any size, in one color, embroidered on uniforms, or cut in stainless for the office door.
+        </p>
+      </div>
+
+      <!-- Concept B -->
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">B · Tile Monogram</h3>
+          <span class="eyebrow text-stone-400">Alternate</span>
+        </div>
+        <div class="flex items-center justify-center gap-8 bg-white px-6 py-12">
+          <span class="inline-flex flex-col items-center">
+            <span class="relative inline-flex h-28 w-28 items-center justify-center border-[3px] border-pine-900">
+              <span class="absolute inset-1.5 border border-brass-500"></span>
+              <span class="font-display text-5xl font-bold text-pine-900">K</span>
+            </span>
+            <span class="mt-3 block text-center">
+              <span class="block font-display text-xl font-bold uppercase tracking-[0.14em] text-pine-900">Krystal Clear</span>
+              <span class="eyebrow block text-brass-600">Service · Est. Pleasant Hill</span>
+            </span>
+          </span>
+        </div>
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          A floor tile with a brass inlay border — nods to the stone and VCT work. Strong as a stamp, app icon, or
+          embroidered patch; reads more "established trade company."
+        </p>
+      </div>
+
+      <!-- Concept C -->
+      <div class="border border-stone-200 lg:col-span-2">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">C · Crew Badge</h3>
+          <span class="eyebrow text-stone-400">Alternate</span>
+        </div>
+        <div class="flex items-center justify-center bg-white px-6 py-10">
+          <svg width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="KCS crew badge logo concept">
+            <circle cx="110" cy="110" r="104" fill="#123227" />
+            <circle cx="110" cy="110" r="96" fill="none" stroke="#c09a3e" stroke-width="2" />
+            <circle cx="110" cy="110" r="70" fill="none" stroke="#c09a3e" stroke-width="1" />
+            <defs>
+              <path id="topArc" d="M 110,110 m -83,0 a 83,83 0 1,1 166,0" />
+              <path id="bottomArc" d="M 110,110 m -83,0 a 83,83 0 1,0 166,0" />
+            </defs>
+            <text font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="4" fill="#dcc077">
+              <textPath href="#topArc" startOffset="50%" text-anchor="middle">KRYSTAL CLEAR SERVICE</textPath>
+            </text>
+            <text font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="3" fill="#dcc077">
+              <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">JANITORIAL · FLOOR CARE</textPath>
+            </text>
+            <text x="110" y="124" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="52" fill="#ffffff">KCS</text>
+            <rect x="80" y="132" width="60" height="3" fill="#c09a3e" />
+          </svg>
+        </div>
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          A uniform-patch roundel for trucks, polos, and the QR check-in signage later. Pairs with Concept A (badge
+          for crew gear, wordmark for the website and documents).
+        </p>
+      </div>
+    </div>
+
+    <!-- Palette -->
+    <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Palette</h2>
+    <p class="mt-2 max-w-2xl text-stone-600">
+      Work-shirt green, lobby brass, warm stone neutrals. Deliberately not the tech-blue every competitor uses.
+    </p>
+    <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      {
+        palette.map((c) => (
+          <div class="border border-stone-200">
+            <div class="h-20" style={`background:${c.hex}`} />
+            <div class="px-3 py-2">
+              <p class="text-sm font-bold text-pine-900">{c.name}</p>
+              <p class="font-mono text-xs text-stone-500">{c.hex}</p>
+              <p class="mt-1 text-xs text-stone-500">{c.note}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Type -->
+    <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Typography</h2>
+    <div class="mt-6 space-y-6">
+      <div class="border border-stone-200 p-6">
+        <p class="eyebrow text-brass-600">Display — Barlow Condensed Bold</p>
+        <p class="mt-2 font-display text-5xl font-bold uppercase leading-none text-pine-900">
+          The cleanest floors in Northern California
+        </p>
+        <p class="mt-3 text-sm text-stone-500">
+          Barlow is drawn from California public signage — highway signs, license plates. A California trade company
+          set in California letters.
+        </p>
+      </div>
+      <div class="border border-stone-200 p-6">
+        <p class="eyebrow text-brass-600">Body — Barlow</p>
+        <p class="mt-2 max-w-2xl text-lg text-stone-700">
+          Every facility is different, so we start with a free walkthrough. We look at square footage, floor types,
+          traffic, and your schedule, then send a flat monthly or per-job quote.
+        </p>
+      </div>
+      <div class="border border-stone-200 p-6">
+        <p class="eyebrow text-brass-600">Labels — IBM Plex Mono</p>
+        <p class="eyebrow mt-3 text-pine-700">Work order № 001 · Licensed · Bonded · Insured · Night crew</p>
+        <p class="mt-3 text-sm text-stone-500">
+          The mono face gives labels the register of a work order / sign-off sheet — the paperwork of the trade.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

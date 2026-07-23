@@ -37,5 +37,5 @@ Forms: the quote form is wired for **Netlify Forms** (`name="quote"`), redirecti
 - [ ] Confirm final domain (the "no s" domain) → update `site` in `astro.config.mjs`, `src/config/site.ts`, `public/robots.txt`
 - [ ] Confirm business email in `src/config/site.ts`
 - [ ] Swap in real photos from the client (hero, services, about)
-- [ ] Add final logo files (current logo is a placeholder wordmark)
+- [ ] Review logo direction with client — three concepts live at `/brand/` (noindex, internal)
 - [ ] Point domain DNS at Netlify and enable form notifications

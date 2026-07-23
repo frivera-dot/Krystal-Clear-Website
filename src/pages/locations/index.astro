@@ -16,8 +16,8 @@ import { citiesInRegion, cities } from "../../data/cities";
 
   <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
     <div class="max-w-3xl">
-      <h1 class="text-4xl font-extrabold tracking-tight text-navy-900">Where We Work</h1>
-      <p class="mt-4 text-lg leading-relaxed text-slate-600">
+      <h1 class="text-4xl font-extrabold tracking-tight text-pine-900">Where We Work</h1>
+      <p class="mt-4 text-lg leading-relaxed text-stone-600">
         KCS is headquartered at {SITE.address.street}, {SITE.address.city} — and our crews cover
         {" " + SITE.serviceAreaSummary.toLowerCase()}. Click your city for local service details.
       </p>
@@ -28,21 +28,21 @@ import { citiesInRegion, cities } from "../../data/cities";
         regions.map((r) => (
           <div>
             <div class="flex items-baseline justify-between gap-4">
-              <h2 class="text-2xl font-extrabold tracking-tight text-navy-900">
-                <a href={`/service-areas/${r.slug}/`} class="hover:text-crystal-700">
+              <h2 class="text-2xl font-extrabold tracking-tight text-pine-900">
+                <a href={`/service-areas/${r.slug}/`} class="hover:text-brass-700">
                   {r.name}
                 </a>
               </h2>
-              <a href={`/service-areas/${r.slug}/`} class="text-sm font-bold text-crystal-600 hover:text-crystal-700">
+              <a href={`/service-areas/${r.slug}/`} class="text-sm font-bold text-brass-600 hover:text-brass-700">
                 Region overview →
               </a>
             </div>
-            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600">{r.blurb}</p>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-stone-600">{r.blurb}</p>
             <div class="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {citiesInRegion(r.slug).map((c) => (
                 <a
                   href={`/locations/${c.slug}/`}
-                  class="rounded-lg border border-slate-100 bg-white px-4 py-3 text-sm font-semibold text-navy-900 shadow-sm transition hover:border-crystal-200 hover:text-crystal-700 hover:shadow-md"
+                  class="rounded-lg border border-stone-200 bg-white px-4 py-3 text-sm font-semibold text-pine-900 shadow-sm transition hover:border-brass-200 hover:text-brass-700"
                 >
                   {c.name}
                 </a>
