@@ -1,0 +1,73 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import { SITE } from "../config/site";
+---
+
+<Layout
+  title="Contact KCS — Free Commercial Cleaning Quote | (925) 301-5566"
+  description="Get a free walkthrough & flat quote for your facility. Call (925) 301-5566 or send us your details — KCS serves the Bay Area, Sacramento & Central Valley."
+>
+  <Breadcrumbs crumbs={[{ label: "Contact" }]} />
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-2">
+    <div>
+      <h1 class="text-4xl font-extrabold tracking-tight text-navy-900">Let's Talk About Your Facility</h1>
+      <p class="mt-4 text-lg leading-relaxed text-slate-600">
+        Tell us what you need and we'll schedule a free walkthrough — usually within a couple of business days. You'll
+        get a flat written quote with no surprises.
+      </p>
+
+      <div class="mt-8 space-y-5">
+        <div class="flex items-start gap-4">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-crystal-100 text-crystal-700">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.2a1 1 0 01.95.68l1.2 3.6a1 1 0 01-.27 1.06l-1.5 1.36a14 14 0 006.7 6.7l1.37-1.5a1 1 0 011.06-.26l3.6 1.2a1 1 0 01.69.94V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z" />
+            </svg>
+          </span>
+          <div>
+            <p class="font-bold text-navy-900">Phone</p>
+            <a href={SITE.phoneHref} class="text-crystal-700 hover:text-crystal-600">{SITE.phone}</a>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-crystal-100 text-crystal-700">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s-7-5.1-7-11a7 7 0 1114 0c0 5.9-7 11-7 11z" />
+              <circle cx="12" cy="10" r="2.5" />
+            </svg>
+          </span>
+          <div>
+            <p class="font-bold text-navy-900">Headquarters</p>
+            <p class="text-slate-600">{SITE.address.street}<br />{SITE.address.city}, {SITE.address.state} {SITE.address.zip}</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-crystal-100 text-crystal-700">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path stroke-linecap="round" d="M12 7v5l3 2" />
+            </svg>
+          </span>
+          <div>
+            <p class="font-bold text-navy-900">Hours</p>
+            <p class="text-slate-600">{SITE.hours}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 rounded-2xl border border-slate-100 bg-slate-50 p-6">
+        <h2 class="font-bold text-navy-900">Service Area</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">
+          {SITE.serviceAreaSummary}. Not sure if you're covered? Call us — if your facility is anywhere between San
+          Francisco and Modesto, chances are we already have a crew nearby.
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import CTABand from "../../../components/CTABand.astro";
+import QuoteForm from "../../../components/QuoteForm.astro";
+import { regions } from "../../../data/regions";
+import { citiesInRegion } from "../../../data/cities";
+import { services } from "../../../data/services";
+
+export function getStaticPaths() {
+  return regions.map((region) => ({ params: { region: region.slug }, props: { region } }));
+}
+
+const { region } = Astro.props;
+const regionCities = citiesInRegion(region.slug);
+const coreServices = services.filter((s) => s.isCore);
+---
+
+<Layout
+  title={`Commercial Cleaning in the ${region.name} | KCS`}
+  description={`Commercial janitorial & floor care across the ${region.name}: ${regionCities
+    .slice(0, 4)
+    .map((c) => c.name)
+    .join(", ")} & more. Licensed, bonded & insured. (925) 301-5566.`}
+>
+  <Breadcrumbs crumbs={[{ label: "Service Areas", href: "/locations/" }, { label: region.name }]} />
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_24rem]">
+    <div>
+      <h1 class="text-4xl font-extrabold tracking-tight text-navy-900">
+        Commercial Cleaning in the {region.name}
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-slate-600">{region.blurb}</p>
+
+      <h2 class="mt-10 text-2xl font-extrabold tracking-tight text-navy-900">Cities We Serve in the {region.name}</h2>
+      <div class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          regionCities.map((c) => (
+            <a
+              href={`/locations/${c.slug}/`}
+              class="rounded-lg border border-slate-100 bg-white px-4 py-3 font-semibold text-navy-900 shadow-sm transition hover:border-crystal-200 hover:text-crystal-700 hover:shadow-md"
+            >
+              {c.name}
+            </a>
+          ))
+        }
+      </div>
+
+      <h2 class="mt-10 text-2xl font-extrabold tracking-tight text-navy-900">Popular Services Here</h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        {
+          coreServices.map((s) => (
+            <a
+              href={`/services/${s.slug}/`}
+              class="group rounded-xl border border-slate-100 bg-white p-5 shadow-sm transition hover:border-crystal-200 hover:shadow-md"
+            >
+              <h3 class="font-bold text-navy-900 group-hover:text-crystal-700">{s.name}</h3>
+              <p class="mt-1.5 text-sm text-slate-600">{s.blurb}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <aside class="lg:sticky lg:top-24 lg:self-start">
+      <QuoteForm heading={`Get a Quote in the ${region.name}`} />
+    </aside>
+  </section>
+
+  <CTABand />
+</Layout>

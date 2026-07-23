@@ -1,0 +1,228 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TrustBar from "../components/TrustBar.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import CTABand from "../components/CTABand.astro";
+import FAQSection from "../components/FAQSection.astro";
+import { SITE } from "../config/site";
+import { services } from "../data/services";
+import { industries } from "../data/industries";
+import { regions } from "../data/regions";
+import { citiesInRegion } from "../data/cities";
+
+const coreServices = services.filter((s) => s.isCore);
+const specialtyServices = services.filter((s) => !s.isCore);
+
+const homeFaqs = [
+  {
+    q: "Do you offer residential cleaning?",
+    a: "No — KCS is 100% commercial. We clean offices, schools, medical facilities, gyms, churches, HOA common areas, and retail spaces. Keeping our focus commercial means our crews, equipment, and processes are built for business facilities.",
+  },
+  {
+    q: "What areas do you serve?",
+    a: `We serve ${SITE.serviceAreaSummary} — from our Pleasant Hill headquarters we cover Contra Costa County, the Tri-Valley, Oakland and the East Bay, downtown San Francisco, Solano County, the Sacramento area, and the Central Valley down to Modesto.`,
+  },
+  {
+    q: "How does pricing work?",
+    a: "Every facility is different, so we start with a free walkthrough. We look at square footage, floor types, traffic, and your schedule, then send a flat monthly or per-job quote. No hidden fees and no lock-in surprises.",
+  },
+  {
+    q: "Are you licensed and insured?",
+    a: "Yes — KCS is licensed, bonded, and insured. We're happy to provide certificates of insurance for your property manager or building requirements before we start.",
+  },
+  {
+    q: "Can you clean after hours?",
+    a: "Absolutely. Most of our janitorial accounts are serviced at night or on weekends so your business never skips a beat. Day porter-style visits are available too.",
+  },
+  {
+    q: "What makes KCS different from other janitorial companies?",
+    a: `Floors. Our founder spent ${SITE.yearsFloorExperience}+ years mastering floor care — stripping and waxing, concrete polishing, marble and stone restoration — before building KCS. Most janitorial companies subcontract floor work; we're the specialists others call.`,
+  },
+];
+---
+
+<Layout
+  title="Commercial Janitorial Services & Floor Care | KCS Krystal Clear Service"
+  description="Commercial janitorial services & specialty floor care for the Bay Area, Sacramento & Central Valley. Licensed, bonded & insured. Free walkthrough: (925) 301-5566."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-navy-950">
+    <div
+      class="pointer-events-none absolute inset-0 opacity-40"
+      style="background: radial-gradient(60rem 30rem at 80% -10%, rgba(6,174,212,0.35), transparent 60%), radial-gradient(40rem 25rem at 10% 110%, rgba(34,203,238,0.15), transparent 60%);"
+    >
+    </div>
+    <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24">
+      <div>
+        <p class="inline-flex items-center gap-2 rounded-full border border-navy-700 bg-navy-900/60 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-crystal-300">
+          Bay Area · Sacramento · Central Valley
+        </p>
+        <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
+          Commercial Cleaning That's <span class="text-crystal-400">Krystal Clear.</span>
+        </h1>
+        <p class="mt-5 max-w-xl text-lg leading-relaxed text-navy-200">
+          Janitorial services, deep cleans, post-construction cleanup — and the sharpest floor care crews in Northern
+          California. Offices, schools, medical, gyms, churches, and HOAs trust KCS to make their facilities shine.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/contact/"
+            class="rounded-lg bg-crystal-500 px-7 py-4 text-center font-bold text-white shadow-lg shadow-crystal-500/30 hover:bg-crystal-400"
+          >
+            Schedule a Free Walkthrough
+          </a>
+          <a
+            href={SITE.phoneHref}
+            class="rounded-lg border border-navy-600 px-7 py-4 text-center font-bold text-white hover:bg-navy-900"
+          >
+            Call {SITE.phone}
+          </a>
+        </div>
+        <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-navy-300">
+          <span>Trusted by:</span>
+          {SITE.featuredClients.map((c) => <span class="font-semibold text-navy-100">{c.name}</span>)}
+        </div>
+      </div>
+      <div class="lg:pl-6">
+        <QuoteForm />
+      </div>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <!-- Services -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-navy-900">Commercial Cleaning Services</h2>
+      <p class="mt-3 text-slate-600">
+        Everything your facility needs under one roof — recurring janitorial contracts, one-time deep cleans, and the
+        specialty floor work other companies subcontract to us.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        [...coreServices, ...specialtyServices.slice(0, 1)].map((s) => (
+          <a
+            href={`/services/${s.slug}/`}
+            class="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-crystal-200 hover:shadow-lg"
+          >
+            <h3 class="text-lg font-bold text-navy-900 group-hover:text-crystal-700">{s.name}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">{s.blurb}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-bold text-crystal-600">
+              Learn more
+              <svg class="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+              </svg>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="mt-8 text-center">
+      <a href="/services/" class="font-bold text-crystal-700 hover:text-crystal-600">View all {services.length} services →</a>
+    </p>
+  </section>
+
+  <!-- Floor care specialty -->
+  <section class="bg-navy-900">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-wider text-crystal-400">Our Specialty</p>
+        <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-white">
+          The Floor Care Specialists Other Companies Call
+        </h2>
+        <p class="mt-4 leading-relaxed text-navy-200">
+          Before KCS existed, our founder spent {SITE.yearsFloorExperience}+ years stripping, sealing, and polishing
+          floors across the Bay Area. That expertise is still the heart of the company: VCT stripping &amp; waxing,
+          diamond-ground concrete polishing, and marble &amp; natural stone restoration done in-house — never
+          subcontracted.
+        </p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/services/commercial-floor-care/"
+            class="rounded-lg bg-crystal-500 px-6 py-3.5 text-center font-bold text-white hover:bg-crystal-400"
+          >
+            Explore Floor Care
+          </a>
+        </div>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        {
+          ["floor-stripping-and-waxing", "concrete-polishing", "marble-and-stone-polishing", "commercial-carpet-cleaning"].map(
+            (slug) => {
+              const s = services.find((x) => x.slug === slug)!;
+              return (
+                <a
+                  href={`/services/${s.slug}/`}
+                  class="rounded-xl border border-navy-700 bg-navy-800/60 p-5 transition hover:border-crystal-500/50 hover:bg-navy-800"
+                >
+                  <h3 class="font-bold text-white">{s.shortName}</h3>
+                  <p class="mt-1.5 text-sm text-navy-300">{s.blurb}</p>
+                </a>
+              );
+            }
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl font-extrabold tracking-tight text-navy-900">Who We Clean For</h2>
+      <p class="mt-3 text-slate-600">
+        From Class-A office towers to private school campuses, our crews are trained for the facilities that demand
+        more than a mop and a promise.
+      </p>
+    </div>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        industries.map((i) => (
+          <a
+            href={`/industries/${i.slug}/`}
+            class="group rounded-xl border border-slate-100 bg-white p-5 text-center shadow-sm transition hover:border-crystal-200 hover:shadow-md"
+          >
+            <h3 class="font-bold text-navy-900 group-hover:text-crystal-700">{i.name}</h3>
+            <p class="mt-1.5 text-xs leading-relaxed text-slate-500">{i.blurb}</p>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Service areas -->
+  <section class="border-t border-slate-100 bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight text-navy-900">Serving Northern California</h2>
+        <p class="mt-3 text-slate-600">
+          Headquartered in Pleasant Hill with crews across {SITE.serviceAreaSummary.toLowerCase()}.
+        </p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {
+          regions.map((r) => (
+            <div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+              <a href={`/service-areas/${r.slug}/`} class="text-lg font-bold text-navy-900 hover:text-crystal-700">
+                {r.name}
+              </a>
+              <div class="mt-3 flex flex-wrap gap-x-3 gap-y-1.5">
+                {citiesInRegion(r.slug).map((c) => (
+                  <a href={`/locations/${c.slug}/`} class="text-sm text-slate-500 hover:text-crystal-700">
+                    {c.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={homeFaqs} />
+
+  <CTABand />
+</Layout>

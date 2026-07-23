@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+
+  /* KCS brand — deep navy + crystal teal */
+  --color-navy-50: #f0f5fa;
+  --color-navy-100: #dce8f3;
+  --color-navy-200: #bed3e8;
+  --color-navy-300: #92b4d6;
+  --color-navy-400: #5f8fc0;
+  --color-navy-500: #3d71aa;
+  --color-navy-600: #2d598f;
+  --color-navy-700: #274974;
+  --color-navy-800: #243f61;
+  --color-navy-900: #0b2545;
+  --color-navy-950: #071930;
+
+  --color-crystal-50: #ecfeff;
+  --color-crystal-100: #cff9fe;
+  --color-crystal-200: #a5f0fc;
+  --color-crystal-300: #67e3f9;
+  --color-crystal-400: #22cbee;
+  --color-crystal-500: #06aed4;
+  --color-crystal-600: #088ab2;
+  --color-crystal-700: #0e6f90;
+  --color-crystal-800: #155a75;
+  --color-crystal-900: #164a63;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-slate-700 antialiased;
+}
+
+/* Prose defaults for long-form SEO copy */
+.copy p {
+  @apply mb-4 leading-relaxed;
+}
+.copy p:last-child {
+  @apply mb-0;
+}

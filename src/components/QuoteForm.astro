@@ -1,0 +1,108 @@
+---
+// Netlify Forms-ready quote form. Works once deployed to Netlify (form name: "quote").
+import { services } from "../data/services";
+
+interface Props {
+  heading?: string;
+}
+const { heading = "Request a Free Quote" } = Astro.props;
+---
+
+<div class="rounded-2xl border border-slate-100 bg-white p-6 shadow-xl shadow-navy-900/5 sm:p-8">
+  <h3 class="text-xl font-extrabold tracking-tight text-navy-900">{heading}</h3>
+  <p class="mt-1 text-sm text-slate-500">Free walkthrough. Flat quote. No pressure.</p>
+  <form
+    name="quote"
+    method="POST"
+    action="/thank-you/"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    class="mt-5 space-y-4"
+  >
+    <input type="hidden" name="form-name" value="quote" />
+    <p class="hidden">
+      <label>Don't fill this out: <input name="bot-field" /></label>
+    </p>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for="q-name" class="mb-1 block text-sm font-semibold text-navy-900">Name</label>
+        <input
+          id="q-name"
+          name="name"
+          required
+          autocomplete="name"
+          class="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"
+        />
+      </div>
+      <div>
+        <label for="q-company" class="mb-1 block text-sm font-semibold text-navy-900">Company / Facility</label>
+        <input
+          id="q-company"
+          name="company"
+          autocomplete="organization"
+          class="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"
+        />
+      </div>
+      <div>
+        <label for="q-phone" class="mb-1 block text-sm font-semibold text-navy-900">Phone</label>
+        <input
+          id="q-phone"
+          name="phone"
+          type="tel"
+          required
+          autocomplete="tel"
+          class="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"
+        />
+      </div>
+      <div>
+        <label for="q-email" class="mb-1 block text-sm font-semibold text-navy-900">Email</label>
+        <input
+          id="q-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          class="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"
+        />
+      </div>
+    </div>
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for="q-city" class="mb-1 block text-sm font-semibold text-navy-900">Facility City</label>
+        <input
+          id="q-city"
+          name="city"
+          placeholder="e.g. Walnut Creek"
+          class="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"
+        />
+      </div>
+      <div>
+        <label for="q-service" class="mb-1 block text-sm font-semibold text-navy-900">Service Needed</label>
+        <select
+          id="q-service"
+          name="service"
+          class="w-full rounded-lg border border-slate-200 bg-white px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"
+        >
+          <option value="">Not sure yet</option>
+          {services.map((s) => <option value={s.name}>{s.name}</option>)}
+        </select>
+      </div>
+    </div>
+    <div>
+      <label for="q-message" class="mb-1 block text-sm font-semibold text-navy-900">Tell us about your facility</label>
+      <textarea
+        id="q-message"
+        name="message"
+        rows="3"
+        placeholder="Square footage, floor types, cleaning frequency, anything else…"
+        class="w-full rounded-lg border border-slate-200 px-3.5 py-2.5 text-sm focus:border-crystal-500 focus:outline-none focus:ring-2 focus:ring-crystal-500/20"></textarea>
+    </div>
+    <button
+      type="submit"
+      class="w-full rounded-lg bg-crystal-600 px-6 py-3.5 font-bold text-white shadow-lg shadow-crystal-600/25 transition hover:bg-crystal-700"
+    >
+      Get My Free Quote
+    </button>
+    <p class="text-center text-xs text-slate-400">Commercial facilities only — we don't offer residential cleaning.</p>
+  </form>
+</div>

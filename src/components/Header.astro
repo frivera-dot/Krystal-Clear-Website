@@ -1,0 +1,131 @@
+---
+import { SITE } from "../config/site";
+import Logo from "./Logo.astro";
+import { services } from "../data/services";
+import { industries } from "../data/industries";
+import { regions } from "../data/regions";
+
+const nav = [
+  {
+    label: "Services",
+    href: "/services/",
+    children: services.map((s) => ({ label: s.shortName, href: `/services/${s.slug}/` })),
+  },
+  {
+    label: "Industries",
+    href: "/industries/",
+    children: industries.map((i) => ({ label: i.name, href: `/industries/${i.slug}/` })),
+  },
+  {
+    label: "Service Areas",
+    href: "/locations/",
+    children: regions.map((r) => ({ label: r.name, href: `/service-areas/${r.slug}/` })),
+  },
+  { label: "About", href: "/about/", children: [] },
+  { label: "Contact", href: "/contact/", children: [] },
+];
+---
+
+<div class="bg-navy-950 text-sm text-navy-100">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-1.5 sm:px-6">
+    <p class="hidden sm:block">Licensed, Bonded &amp; Insured · Commercial Only · Night &amp; Weekend Crews</p>
+    <p class="sm:hidden">Licensed, Bonded &amp; Insured</p>
+    <a href={SITE.phoneHref} class="font-semibold text-crystal-300 hover:text-crystal-200">{SITE.phone}</a>
+  </div>
+</div>
+
+<header class="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+    <a href="/" aria-label={`${SITE.fullName} — home`}>
+      <Logo />
+    </a>
+
+    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
+      {
+        nav.map((item) => (
+          <div class="group relative">
+            <a
+              href={item.href}
+              class="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold text-navy-900 hover:bg-navy-50"
+            >
+              {item.label}
+              {item.children.length > 0 && (
+                <svg class="h-3.5 w-3.5 text-slate-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              )}
+            </a>
+            {item.children.length > 0 && (
+              <div class="invisible absolute left-0 top-full z-50 w-64 rounded-xl border border-slate-100 bg-white p-2 opacity-0 shadow-xl shadow-navy-900/5 transition group-hover:visible group-hover:opacity-100">
+                {item.children.map((c) => (
+                  <a href={c.href} class="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:bg-navy-50 hover:text-navy-900">
+                    {c.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href="/contact/"
+        class="hidden rounded-lg bg-crystal-600 px-4 py-2.5 text-sm font-bold text-white shadow-sm hover:bg-crystal-700 sm:block"
+      >
+        Get a Free Quote
+      </a>
+      <button
+        id="mobile-menu-button"
+        class="rounded-lg p-2 text-navy-900 hover:bg-navy-50 lg:hidden"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="hidden border-t border-slate-100 bg-white lg:hidden">
+    <nav class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6" aria-label="Mobile">
+      {
+        nav.map((item) => (
+          <div>
+            <a href={item.href} class="block rounded-lg px-3 py-2 font-semibold text-navy-900 hover:bg-navy-50">
+              {item.label}
+            </a>
+            {item.children.length > 0 && (
+              <div class="ml-3 border-l border-slate-100 pl-3">
+                {item.children.slice(0, 8).map((c) => (
+                  <a href={c.href} class="block rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:bg-navy-50">
+                    {c.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+      <a href="/contact/" class="mt-2 block rounded-lg bg-crystal-600 px-4 py-3 text-center font-bold text-white">
+        Get a Free Quote
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-button");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    const open = menu?.classList.toggle("hidden") === false;
+    btn.setAttribute("aria-expanded", String(open));
+  });
+</script>

@@ -1,0 +1,59 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CTABand from "../../components/CTABand.astro";
+import TrustBar from "../../components/TrustBar.astro";
+import { SITE } from "../../config/site";
+import { regions } from "../../data/regions";
+import { citiesInRegion, cities } from "../../data/cities";
+---
+
+<Layout
+  title="Service Areas — Bay Area, Sacramento & Central Valley | KCS"
+  description={`Commercial janitorial & floor care in ${cities.length}+ Northern California cities — Contra Costa, East Bay, Tri-Valley, SF, Solano, Sacramento & Central Valley.`}
+>
+  <Breadcrumbs crumbs={[{ label: "Service Areas" }]} />
+
+  <section class="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl font-extrabold tracking-tight text-navy-900">Where We Work</h1>
+      <p class="mt-4 text-lg leading-relaxed text-slate-600">
+        KCS is headquartered at {SITE.address.street}, {SITE.address.city} — and our crews cover
+        {" " + SITE.serviceAreaSummary.toLowerCase()}. Click your city for local service details.
+      </p>
+    </div>
+
+    <div class="mt-12 space-y-10">
+      {
+        regions.map((r) => (
+          <div>
+            <div class="flex items-baseline justify-between gap-4">
+              <h2 class="text-2xl font-extrabold tracking-tight text-navy-900">
+                <a href={`/service-areas/${r.slug}/`} class="hover:text-crystal-700">
+                  {r.name}
+                </a>
+              </h2>
+              <a href={`/service-areas/${r.slug}/`} class="text-sm font-bold text-crystal-600 hover:text-crystal-700">
+                Region overview →
+              </a>
+            </div>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600">{r.blurb}</p>
+            <div class="mt-4 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              {citiesInRegion(r.slug).map((c) => (
+                <a
+                  href={`/locations/${c.slug}/`}
+                  class="rounded-lg border border-slate-100 bg-white px-4 py-3 text-sm font-semibold text-navy-900 shadow-sm transition hover:border-crystal-200 hover:text-crystal-700 hover:shadow-md"
+                >
+                  {c.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <TrustBar />
+  <CTABand />
+</Layout>

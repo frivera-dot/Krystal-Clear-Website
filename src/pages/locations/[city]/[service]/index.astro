@@ -1,0 +1,172 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Breadcrumbs from "../../../../components/Breadcrumbs.astro";
+import CTABand from "../../../../components/CTABand.astro";
+import QuoteForm from "../../../../components/QuoteForm.astro";
+import FAQSection from "../../../../components/FAQSection.astro";
+import { SITE } from "../../../../config/site";
+import { cities, cityBySlug } from "../../../../data/cities";
+import { services } from "../../../../data/services";
+import { regionBySlug } from "../../../../data/regions";
+import { interpolate, serviceCityTitle, serviceCityMeta } from "../../../../lib/seo";
+
+export function getStaticPaths() {
+  const core = services.filter((s) => s.isCore);
+  return cities.flatMap((city) =>
+    core.map((service) => ({
+      params: { city: city.slug, service: service.slug },
+      props: { city, service },
+    }))
+  );
+}
+
+const { city, service } = Astro.props;
+const region = regionBySlug(city.region);
+const title = serviceCityTitle(service, city);
+const paragraphs = (service.cityParagraphs ?? []).map((t) => interpolate(t, city, region.name));
+const otherCoreServices = services.filter((s) => s.isCore && s.slug !== service.slug);
+const nearby = city.nearby
+  .map((slug) => {
+    try {
+      return cityBySlug(slug);
+    } catch {
+      return null;
+    }
+  })
+  .filter((c) => c !== null);
+
+const comboFaqs = [
+  {
+    q: `How much does ${service.shortName.toLowerCase()} cost in ${city.name}?`,
+    a: `It depends on square footage, condition, and frequency, so we start every ${city.name} job with a free on-site walkthrough. You'll get a flat written quote — no estimates that balloon later. Call ${SITE.phone} to schedule.`,
+  },
+  {
+    q: `Do you serve all of ${city.name}?`,
+    a: `Yes — including ${city.districts.slice(0, 3).join(", ")}. ${city.name} sits inside our core ${region.name} coverage, so scheduling is flexible and response times are fast.`,
+  },
+  {
+    q: `Can you work nights or weekends in ${city.name}?`,
+    a: `That's our default. Most ${service.shortName.toLowerCase()} work in ${city.name} happens after hours so your business, tenants, or students are never disrupted.`,
+  },
+  ...service.faqs.slice(0, 2),
+];
+
+const localSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: title,
+  serviceType: service.name,
+  provider: { "@id": `${SITE.domain}/#business` },
+  areaServed: {
+    "@type": "City",
+    name: city.name,
+    containedInPlace: { "@type": "AdministrativeArea", name: city.county },
+  },
+  description: serviceCityMeta(service, city),
+};
+---
+
+<Layout title={`${title} | KCS`} description={serviceCityMeta(service, city)} schema={[localSchema]}>
+  <Breadcrumbs
+    crumbs={[
+      { label: "Service Areas", href: "/locations/" },
+      { label: city.name, href: `/locations/${city.slug}/` },
+      { label: service.shortName },
+    ]}
+  />
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_24rem]">
+    <div>
+      <p class="text-sm font-bold uppercase tracking-wider text-crystal-600">
+        {city.name}, {city.county}
+      </p>
+      <h1 class="mt-2 text-4xl font-extrabold tracking-tight text-navy-900">{title}</h1>
+
+      <div class="copy mt-6 max-w-3xl text-slate-700">
+        {paragraphs.map((p) => <p>{p}</p>)}
+      </div>
+
+      <h2 class="mt-10 text-2xl font-extrabold tracking-tight text-navy-900">What's Included</h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        {
+          service.features.slice(0, 4).map((f) => (
+            <div class="rounded-xl border border-slate-100 bg-white p-5 shadow-sm">
+              <h3 class="font-bold text-navy-900">{f.title}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{f.description}</p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="mt-4 text-sm">
+        <a href={`/services/${service.slug}/`} class="font-bold text-crystal-700 hover:text-crystal-600">
+          Full {service.shortName.toLowerCase()} details →
+        </a>
+      </p>
+
+      <h2 class="mt-10 text-2xl font-extrabold tracking-tight text-navy-900">
+        Why {city.name} Businesses Choose KCS
+      </h2>
+      <ul class="mt-5 space-y-3 text-slate-700">
+        <li class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-crystal-500"></span>
+          <span>Licensed, bonded &amp; insured — certificates provided for {city.name} property managers on request.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-crystal-500"></span>
+          <span>{SITE.yearsFloorExperience}+ years of specialty floor care expertise behind every crew.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-crystal-500"></span>
+          <span>Night and weekend service as the default — zero disruption to your operation.</span>
+        </li>
+        <li class="flex gap-3">
+          <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-crystal-500"></span>
+          <span>100% commercial focus: {city.clientTypes.slice(0, 4).join(", ")} — never residential.</span>
+        </li>
+      </ul>
+
+      <h2 class="mt-10 text-xl font-extrabold tracking-tight text-navy-900">
+        Other Services in {city.name}
+      </h2>
+      <div class="mt-4 flex flex-wrap gap-3">
+        {
+          otherCoreServices.map((s) => (
+            <a
+              href={`/locations/${city.slug}/${s.slug}/`}
+              class="rounded-lg border border-slate-100 bg-white px-4 py-2 text-sm font-semibold text-navy-900 shadow-sm hover:border-crystal-200 hover:text-crystal-700"
+            >
+              {s.shortName}
+            </a>
+          ))
+        }
+      </div>
+
+      {
+        nearby.length > 0 && (
+          <>
+            <h2 class="mt-8 text-xl font-extrabold tracking-tight text-navy-900">
+              {service.shortName} Near {city.name}
+            </h2>
+            <div class="mt-4 flex flex-wrap gap-3">
+              {nearby.map((n) => (
+                <a
+                  href={`/locations/${n.slug}/${service.slug}/`}
+                  class="rounded-lg border border-slate-100 bg-white px-4 py-2 text-sm font-semibold text-navy-900 shadow-sm hover:border-crystal-200 hover:text-crystal-700"
+                >
+                  {n.name}
+                </a>
+              ))}
+            </div>
+          </>
+        )
+      }
+    </div>
+
+    <aside class="lg:sticky lg:top-24 lg:self-start">
+      <QuoteForm heading={`${service.shortName} Quote — ${city.name}`} />
+    </aside>
+  </section>
+
+  <FAQSection faqs={comboFaqs} heading={`${service.shortName} in ${city.name} — FAQs`} />
+  <CTABand heading={`Book ${service.shortName.toLowerCase()} in ${city.name}`} />
+</Layout>

@@ -1,0 +1,35 @@
+---
+import { SITE } from "../config/site";
+
+interface Props {
+  heading?: string;
+  sub?: string;
+}
+const {
+  heading = "Ready for a facility that stays krystal clear?",
+  sub = "Tell us about your building and we'll schedule a free walkthrough — then send a flat, no-surprises quote.",
+} = Astro.props;
+---
+
+<section class="bg-navy-900">
+  <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 py-14 text-center sm:px-6 lg:flex-row lg:justify-between lg:text-left">
+    <div>
+      <h2 class="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">{heading}</h2>
+      <p class="mt-2 max-w-2xl text-navy-200">{sub}</p>
+    </div>
+    <div class="flex shrink-0 flex-col gap-3 sm:flex-row">
+      <a
+        href="/contact/"
+        class="rounded-lg bg-crystal-500 px-6 py-3.5 text-center font-bold text-white shadow-lg shadow-crystal-500/25 hover:bg-crystal-400"
+      >
+        Get a Free Quote
+      </a>
+      <a
+        href={SITE.phoneHref}
+        class="rounded-lg border border-navy-600 px-6 py-3.5 text-center font-bold text-white hover:bg-navy-800"
+      >
+        Call {SITE.phone}
+      </a>
+    </div>
+  </div>
+</section>

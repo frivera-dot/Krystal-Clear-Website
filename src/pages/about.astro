@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CTABand from "../components/CTABand.astro";
+import TrustBar from "../components/TrustBar.astro";
+import { SITE } from "../config/site";
+---
+
+<Layout
+  title="About KCS — Krystal Clear Service | Commercial Cleaning Experts"
+  description="KCS is a Pleasant Hill-based commercial cleaning company built on 14+ years of floor care mastery. Licensed, bonded & insured. Serving the Bay Area to Modesto."
+>
+  <Breadcrumbs crumbs={[{ label: "About" }]} />
+
+  <section class="mx-auto max-w-4xl px-4 py-10 sm:px-6">
+    <h1 class="text-4xl font-extrabold tracking-tight text-navy-900">Built on Floors. Trusted With Everything.</h1>
+    <div class="copy mt-8 text-lg text-slate-700">
+      <p>
+        KCS — Krystal Clear Service — started with a single specialty: floors. Before founding the company, our owner
+        spent more than {SITE.yearsFloorExperience} years stripping, sealing, and polishing commercial floors across
+        the Bay Area — VCT, concrete, marble, and every kind of natural stone. The kind of work where there's no
+        hiding a shortcut, because the results are literally reflective.
+      </p>
+      <p>
+        That obsession with visible quality became the foundation for a full commercial cleaning company. Today our
+        crews handle recurring janitorial contracts, deep cleans, post-construction cleanups, windows, carpets, and
+        disinfection for offices, private schools, medical facilities, gyms, churches, and HOA communities across
+        {" " + SITE.serviceAreaSummary.toLowerCase()}.
+      </p>
+      <p>
+        We're a family business headquartered in Pleasant Hill, and we've grown the old-fashioned way: property
+        managers who noticed the floors, principals who noticed the crews showed up every night, and referrals from
+        clients like {SITE.featuredClients[0].name} and {SITE.featuredClients[2].name}. We're licensed, bonded, and
+        insured — and we're commercial-only, which keeps our people, equipment, and standards focused on facilities
+        like yours.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 sm:grid-cols-3">
+      <div class="rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-sm">
+        <p class="text-4xl font-extrabold text-crystal-600">{SITE.yearsFloorExperience}+</p>
+        <p class="mt-1 text-sm font-semibold text-navy-900">Years of Floor Care Expertise</p>
+      </div>
+      <div class="rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-sm">
+        <p class="text-4xl font-extrabold text-crystal-600">49</p>
+        <p class="mt-1 text-sm font-semibold text-navy-900">Cities Served Across NorCal</p>
+      </div>
+      <div class="rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-sm">
+        <p class="text-4xl font-extrabold text-crystal-600">100%</p>
+        <p class="mt-1 text-sm font-semibold text-navy-900">Commercial — No Residential</p>
+      </div>
+    </div>
+
+    <h2 class="mt-14 text-2xl font-extrabold tracking-tight text-navy-900">Trusted By</h2>
+    <div class="mt-5 grid gap-4 sm:grid-cols-3">
+      {
+        SITE.featuredClients.map((c) => (
+          <div class="rounded-xl border border-slate-100 bg-slate-50 p-5 text-center">
+            <p class="font-bold text-navy-900">{c.name}</p>
+            <p class="mt-1 text-sm text-slate-500">{c.location}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <TrustBar />
+  <CTABand />
+</Layout>
