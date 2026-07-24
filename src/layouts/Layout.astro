@@ -2,7 +2,10 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import StickyCTA from "../components/StickyCTA.astro";
 import { SITE } from "../config/site";
+import { services } from "../data/services";
+import { cities } from "../data/cities";
 
 interface Props {
   title: string;
@@ -22,10 +25,12 @@ const localBusiness = {
   "@id": `${SITE.domain}/#business`,
   name: SITE.legalName,
   alternateName: SITE.brand,
+  slogan: SITE.tagline,
   description: `Commercial janitorial services and floor care for offices, schools, medical facilities, gyms, churches, and HOAs across ${SITE.serviceAreaSummary}.`,
   url: SITE.domain,
   telephone: SITE.phone,
   email: SITE.email,
+  foundingDate: "2021",
   address: {
     "@type": "PostalAddress",
     streetAddress: SITE.address.street,
@@ -39,7 +44,29 @@ const localBusiness = {
     latitude: SITE.geo.lat,
     longitude: SITE.geo.lng,
   },
-  areaServed: SITE.serviceAreaSummary,
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    opens: "08:00",
+    closes: "18:00",
+  },
+  knowsAbout: [
+    "commercial janitorial services",
+    "floor stripping and waxing",
+    "concrete polishing",
+    "marble and stone restoration",
+    "post-construction cleaning",
+    "commercial deep cleaning",
+  ],
+  areaServed: cities.map((c) => ({ "@type": "City", name: `${c.name}, CA` })),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Commercial cleaning services",
+    itemListElement: services.map((s) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name: s.name, url: `${SITE.domain}/services/${s.slug}/` },
+    })),
+  },
   priceRange: "$$",
 };
 ---
@@ -54,13 +81,18 @@ const localBusiness = {
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={SITE.fullName} />
+    <meta property="og:image" content={new URL("/og-default.png", SITE.domain).href} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={new URL("/og-default.png", SITE.domain).href} />
     <script type="application/ld+json" set:html={JSON.stringify(localBusiness)} />
     {schema.map((s) => <script type="application/ld+json" set:html={JSON.stringify(s)} />)}
   </head>
@@ -70,5 +102,6 @@ const localBusiness = {
       <slot />
     </main>
     <Footer />
+    <StickyCTA />
   </body>
 </html>

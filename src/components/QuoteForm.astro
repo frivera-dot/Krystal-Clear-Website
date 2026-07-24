@@ -59,12 +59,13 @@ const { heading = "Request a Free Quote" } = Astro.props;
         />
       </div>
       <div>
-        <label for="q-email" class="mb-1 block text-sm font-semibold text-pine-900">Email</label>
+        <label for="q-email" class="mb-1 block text-sm font-semibold text-pine-900">
+          Email <span class="font-normal text-stone-400">(optional)</span>
+        </label>
         <input
           id="q-email"
           name="email"
           type="email"
-          required
           autocomplete="email"
           class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         />
@@ -107,6 +108,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
     >
       Get My Free Quote
     </button>
+    <p class="eyebrow text-center text-pine-700">Licensed · Bonded · Insured — response within 1 business day</p>
     <p class="text-center text-xs text-stone-500">Commercial facilities only — we don't offer residential cleaning.</p>
   </form>
   </div>

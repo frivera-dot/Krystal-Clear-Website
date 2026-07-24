@@ -1,0 +1,29 @@
+---
+// Mobile-only persistent lead bar: the two actions that create leads,
+// always one thumb away. Hidden on desktop where the header CTA + sidebar
+// forms carry the load.
+import { SITE } from "../config/site";
+---
+
+<div
+  class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t-2 border-brass-500 bg-pine-950 pb-[env(safe-area-inset-bottom)] lg:hidden"
+  aria-label="Quick contact"
+>
+  <a
+    href={SITE.phoneHref}
+    class="flex items-center justify-center gap-2 py-3.5 font-display text-base font-bold uppercase tracking-wider text-white active:bg-pine-900"
+  >
+    <svg class="h-4 w-4 text-brass-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h2.2a1 1 0 01.95.68l1.2 3.6a1 1 0 01-.27 1.06l-1.5 1.36a14 14 0 006.7 6.7l1.37-1.5a1 1 0 011.06-.26l3.6 1.2a1 1 0 01.69.94V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z" />
+    </svg>
+    Call Now
+  </a>
+  <a
+    href="/contact/"
+    class="flex items-center justify-center bg-brass-500 py-3.5 font-display text-base font-bold uppercase tracking-wider text-pine-950 active:bg-brass-400"
+  >
+    Free Quote
+  </a>
+</div>
+<!-- Spacer so the fixed bar never covers footer content on mobile -->
+<div class="h-14 lg:hidden" aria-hidden="true"></div>
