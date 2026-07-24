@@ -30,7 +30,7 @@ const nav = [
   <div class="eyebrow mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6">
     <p class="hidden sm:block">Licensed · Bonded · Insured — Commercial only — Night &amp; weekend crews</p>
     <p class="sm:hidden">Licensed · Bonded · Insured</p>
-    <a href={SITE.phoneHref} class="shrink-0 text-brass-300 hover:text-brass-200">{SITE.phone}</a>
+    <a href={SITE.phoneHref} class="shrink-0 py-1.5 text-brass-300 hover:text-brass-200">{SITE.phone}</a>
   </div>
 </div>
 
@@ -94,7 +94,7 @@ const nav = [
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-stone-200 bg-white lg:hidden">
+  <div id="mobile-menu" class="hidden max-h-[calc(100vh-7rem)] overflow-y-auto border-t border-stone-200 bg-white lg:hidden">
     <nav class="mx-auto max-w-7xl space-y-1 px-4 py-4 sm:px-6" aria-label="Mobile">
       {
         nav.map((item) => (
@@ -105,7 +105,7 @@ const nav = [
             {item.children.length > 0 && (
               <div class="ml-3 border-l border-stone-200 pl-3">
                 {item.children.slice(0, 8).map((c) => (
-                  <a href={c.href} class="block rounded-lg px-3 py-1.5 text-sm text-stone-600 hover:bg-pine-50">
+                  <a href={c.href} class="block rounded-lg px-3 py-2.5 text-sm text-stone-600 hover:bg-pine-50">
                     {c.label}
                   </a>
                 ))}

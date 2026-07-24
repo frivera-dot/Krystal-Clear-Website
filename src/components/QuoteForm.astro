@@ -35,7 +35,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
           name="name"
           required
           autocomplete="name"
-          class="w-full border border-stone-300 px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"
+          class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         />
       </div>
       <div>
@@ -44,7 +44,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
           id="q-company"
           name="company"
           autocomplete="organization"
-          class="w-full border border-stone-300 px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"
+          class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         />
       </div>
       <div>
@@ -55,7 +55,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
           type="tel"
           required
           autocomplete="tel"
-          class="w-full border border-stone-300 px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"
+          class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         />
       </div>
       <div>
@@ -66,7 +66,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
           type="email"
           required
           autocomplete="email"
-          class="w-full border border-stone-300 px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"
+          class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         />
       </div>
     </div>
@@ -77,7 +77,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
           id="q-city"
           name="city"
           placeholder="e.g. Walnut Creek"
-          class="w-full border border-stone-300 px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"
+          class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         />
       </div>
       <div>
@@ -85,7 +85,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
         <select
           id="q-service"
           name="service"
-          class="w-full border border-stone-300 bg-white px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"
+          class="w-full border border-stone-300 bg-white px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"
         >
           <option value="">Not sure yet</option>
           {services.map((s) => <option value={s.name}>{s.name}</option>)}
@@ -99,7 +99,7 @@ const { heading = "Request a Free Quote" } = Astro.props;
         name="message"
         rows="3"
         placeholder="Square footage, floor types, cleaning frequency, anything else…"
-        class="w-full border border-stone-300 px-3.5 py-2.5 text-sm focus:border-pine-700 focus:outline-none focus:ring-2 focus:ring-pine-700/15"></textarea>
+        class="w-full border border-stone-300 px-3.5 py-2.5 text-base focus:border-pine-700 sm:text-sm focus:outline-none focus:ring-2 focus:ring-pine-700/15"></textarea>
     </div>
     <button
       type="submit"
