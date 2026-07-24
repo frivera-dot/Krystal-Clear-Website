@@ -1,5 +1,7 @@
 ---
 // Internal brand board — for client presentation only (noindex, excluded from sitemap).
+// Orbitron loads only on this page: the squared industrial face for Direction 2 comps.
+import "@fontsource/orbitron/900.css";
 import Layout from "../../layouts/Layout.astro";
 
 const palette = [
@@ -122,20 +124,10 @@ const palette = [
     <h2 class="mt-20 font-display text-2xl font-bold uppercase text-pine-900">Direction 2 · Angular Industrial</h2>
     <p class="mt-2 max-w-2xl text-stone-600">
       Built from the comp set: heavy geometric letterforms with a chevron-cut K, wide-tracked sub-line. Shown in the
-      comp palettes and re-cut in the Direction 1 pine &amp; brass system.&ensp;<strong>Note:</strong> the comps read "Services" — the confirmed legal/brand name is&nbsp;<em>Krystal Clear Service</em>&nbsp;(no s, matching the domain and email), used below.
+      comp palettes and re-cut in the Direction 1 pine &amp; brass system. Wordmarks are set in Orbitron Black — the
+      closest open-license face to the comps' squared Eurostile-Extended letterforms, so whichever version Fidel
+      picks can go straight onto the website as real, licensed type.&ensp;<strong>Note:</strong> the comps read "Services" — the confirmed legal/brand name is&nbsp;<em>Krystal Clear Service</em>&nbsp;(no s, matching the domain and email), used below.
     </p>
-
-    <!-- Shared letterform symbol: chevron K + squared C + squared S -->
-    <svg class="hidden" aria-hidden="true">
-      <defs>
-        <symbol id="kcs-cut" viewBox="0 0 302 100">
-          <rect x="0" y="0" width="24" height="100" style="fill:var(--kcs-k,currentColor)"></rect>
-          <path d="M82 8 L40 50 L82 92" fill="none" stroke-width="26" style="stroke:var(--kcs-k,currentColor)"></path>
-          <path d="M194 13 H134 V87 H194" fill="none" stroke-width="26" style="stroke:var(--kcs-cs,currentColor)"></path>
-          <path d="M300 13 H240 V50 H287 V87 H227" fill="none" stroke-width="26" style="stroke:var(--kcs-cs,currentColor)"></path>
-        </symbol>
-      </defs>
-    </svg>
 
     <div class="mt-6 grid gap-8 lg:grid-cols-2">
       <!-- Concept D -->
@@ -145,20 +137,16 @@ const palette = [
           <span class="eyebrow text-stone-400">"Luxury contractor"</span>
         </div>
         <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
-          <svg viewBox="0 0 302 100" class="h-16 text-stone-900" role="img" aria-label="KCS cut wordmark, dark on light">
-            <use href="#kcs-cut"></use>
-          </svg>
+          <p class="cut-wordmark text-stone-900">KCS</p>
           <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-stone-900">Krystal Clear Service</p>
         </div>
         <div class="flex flex-col items-center gap-3 bg-stone-950 px-6 py-10">
-          <svg viewBox="0 0 302 100" class="h-16 text-white" role="img" aria-label="KCS cut wordmark, light on dark">
-            <use href="#kcs-cut"></use>
-          </svg>
+          <p class="cut-wordmark text-white">KCS</p>
           <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
         </div>
         <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
           One color, zero gradients — reads at any size and costs nothing extra to print, embroider, or cut in vinyl
-          for the trucks. The chevron K doubles as a standalone icon (G).
+          for the trucks. Pairs with the chevron icon (G) for small-format uses.
         </p>
       </div>
 
@@ -169,9 +157,7 @@ const palette = [
           <span class="eyebrow text-stone-400">"Corporate tech"</span>
         </div>
         <div class="flex flex-col items-center gap-3 bg-[#0d1b2e] px-6 py-10">
-          <svg viewBox="0 0 302 100" class="h-16" style="--kcs-k:#2762e9; --kcs-cs:#ffffff" role="img" aria-label="KCS cut wordmark, blue K">
-            <use href="#kcs-cut"></use>
-          </svg>
+          <p class="cut-wordmark text-white"><span style="color:#2762e9">K</span>CS</p>
           <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-[#2762e9]">Krystal Clear Service</p>
           <p class="eyebrow text-[#8fa1b3]">— Janitorial &amp; Building Maintenance —</p>
         </div>
@@ -203,16 +189,12 @@ const palette = [
           <span class="eyebrow text-brass-600">Bridges both directions</span>
         </div>
         <div class="flex flex-col items-center gap-3 bg-pine-950 px-6 py-10">
-          <svg viewBox="0 0 302 100" class="h-16" style="--kcs-k:#c09a3e; --kcs-cs:#ffffff" role="img" aria-label="KCS cut wordmark, brass K on pine">
-            <use href="#kcs-cut"></use>
-          </svg>
+          <p class="cut-wordmark text-white"><span class="text-brass-500">K</span>CS</p>
           <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
           <p class="eyebrow text-brass-300">Janitorial · Floor Care</p>
         </div>
         <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
-          <svg viewBox="0 0 302 100" class="h-16" style="--kcs-k:#a5812f; --kcs-cs:#123227" role="img" aria-label="KCS cut wordmark, brass K on white">
-            <use href="#kcs-cut"></use>
-          </svg>
+          <p class="cut-wordmark text-pine-900"><span class="text-brass-600">K</span>CS</p>
           <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-pine-900">Krystal Clear Service</p>
         </div>
         <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
@@ -301,3 +283,13 @@ const palette = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .cut-wordmark {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+</style>
