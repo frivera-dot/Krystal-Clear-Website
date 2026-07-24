@@ -1,0 +1,96 @@
+---
+// Crossfading job-photo rotator. No slider tracks, no bounce — a fixed frame
+// with slow crossfades, mono captions, and manual prev/next. Auto-advance
+// pauses on hover/focus and is disabled entirely under prefers-reduced-motion.
+import type { GalleryImage } from "../data/gallery";
+
+interface Props {
+  images: GalleryImage[];
+  /** ms between auto-advances */
+  interval?: number;
+}
+const { images, interval = 4500 } = Astro.props;
+---
+
+<div class="photo-rotator border border-pine-900/20 bg-pine-950" data-interval={interval}>
+  <div class="relative aspect-[16/10] overflow-hidden">
+    {
+      images.map((img, i) => (
+        <img
+          src={img.src}
+          alt={img.alt}
+          loading={i === 0 ? "eager" : "lazy"}
+          class={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${i === 0 ? "opacity-100" : "opacity-0"}`}
+          data-slide={i}
+          data-caption={img.caption}
+        />
+      ))
+    }
+  </div>
+  <div class="flex items-center justify-between gap-3 border-t-2 border-brass-500 bg-pine-900 px-4 py-2.5">
+    <p class="eyebrow truncate text-brass-300" data-caption>{images[0]?.caption}</p>
+    <div class="flex shrink-0 items-center gap-3">
+      <span class="eyebrow text-pine-300" data-counter>01 / {String(images.length).padStart(2, "0")}</span>
+      <button
+        type="button"
+        data-prev
+        aria-label="Previous photo"
+        class="flex h-8 w-8 items-center justify-center border border-pine-100/30 text-white hover:border-brass-400 hover:text-brass-300"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button
+        type="button"
+        data-next
+        aria-label="Next photo"
+        class="flex h-8 w-8 items-center justify-center border border-pine-100/30 text-white hover:border-brass-400 hover:text-brass-300"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".photo-rotator").forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLImageElement>("[data-slide]")];
+    if (slides.length < 2) return;
+    const caption = root.querySelector<HTMLElement>("p[data-caption]");
+    const counter = root.querySelector<HTMLElement>("[data-counter]");
+    const interval = parseInt(root.dataset.interval || "4500", 10);
+    let i = 0;
+    let timer: number | undefined;
+
+    const show = (n: number) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle("opacity-100", k === i));
+      slides.forEach((s, k) => s.classList.toggle("opacity-0", k !== i));
+      const cap = slides[i].dataset.caption || slides[i].alt;
+      if (caption && cap) caption.textContent = cap;
+      if (counter)
+        counter.textContent = `${String(i + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
+    };
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const start = () => {
+      if (reduced || timer) return;
+      timer = window.setInterval(() => show(i + 1), interval);
+    };
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = undefined;
+    };
+
+    root.querySelector("[data-prev]")?.addEventListener("click", () => { stop(); show(i - 1); });
+    root.querySelector("[data-next]")?.addEventListener("click", () => { stop(); show(i + 1); });
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", start);
+    start();
+  });
+</script>

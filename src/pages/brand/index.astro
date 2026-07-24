@@ -3,6 +3,20 @@
 // Orbitron loads only on this page: the squared industrial face for Direction 2 comps.
 import "@fontsource/orbitron/900.css";
 import Layout from "../../layouts/Layout.astro";
+import PhotoRotator from "../../components/PhotoRotator.astro";
+
+// Placeholder slides for the rotator demo (branded SVG frames, swapped for
+// real job photos the day the client sends them).
+const demoSlide = (label: string) =>
+  "data:image/svg+xml," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000"><rect width="1600" height="1000" fill="#123227"/><rect y="640" width="1600" height="4" fill="#c09a3e"/><text x="800" y="560" text-anchor="middle" font-family="Arial Narrow, Impact, sans-serif" font-weight="700" font-size="150" fill="#ffffff">${label}</text><text x="800" y="800" text-anchor="middle" font-family="Courier New, monospace" letter-spacing="14" font-size="42" fill="#dcc077">JOB PHOTO SLOT — AWAITING CREW SHOTS</text></svg>`
+  );
+const demoImages = [
+  { src: demoSlide("STRIP + WAX — AFTER"), alt: "Placeholder for strip and wax after photo", caption: "VCT strip & wax — after · your photo here" },
+  { src: demoSlide("POLISHED CONCRETE"), alt: "Placeholder for polished concrete photo", caption: "Diamond-polished concrete · your photo here" },
+  { src: demoSlide("NIGHT CREW ON SITE"), alt: "Placeholder for night crew photo", caption: "Night crew on site · your photo here" },
+];
 
 const palette = [
   { name: "Pine 950", hex: "#0b211a", note: "Ink — headlines, footer" },
@@ -361,6 +375,17 @@ const palette = [
         Any of the three marks drops into this lockup — tile left, Barlow Condensed name, work-order sub-line. Same
         system on trucks, door signage, proposals, and the crew patch.
       </p>
+    </div>
+
+    <!-- Photo rotator demo -->
+    <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Photo Rotator · Demo</h2>
+    <p class="mt-2 max-w-2xl text-stone-600">
+      The rotating job-photo gallery (per Fidel's request, inspired by EH Clean) — built and ready. These frames are
+      placeholders; the section goes live on the homepage automatically the day real crew photos are added. Slow
+      crossfade, manual arrows, pauses on hover.
+    </p>
+    <div class="mt-6 max-w-2xl">
+      <PhotoRotator images={demoImages} />
     </div>
 
     <!-- Palette -->
