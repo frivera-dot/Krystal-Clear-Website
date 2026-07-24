@@ -118,6 +118,140 @@ const palette = [
       </div>
     </div>
 
+    <!-- ============ Direction 2: Angular Industrial (from client comps) ============ -->
+    <h2 class="mt-20 font-display text-2xl font-bold uppercase text-pine-900">Direction 2 · Angular Industrial</h2>
+    <p class="mt-2 max-w-2xl text-stone-600">
+      Built from the comp set: heavy geometric letterforms with a chevron-cut K, wide-tracked sub-line. Shown in the
+      comp palettes and re-cut in the Direction 1 pine &amp; brass system.&ensp;<strong>Note:</strong> the comps read "Services" — the confirmed legal/brand name is
+      <em>Krystal Clear Service</em> (no s, matching the domain and email), used below.
+    </p>
+
+    <!-- Shared letterform symbol: chevron K + squared C + squared S -->
+    <svg class="hidden" aria-hidden="true">
+      <defs>
+        <symbol id="kcs-cut" viewBox="0 0 302 100">
+          <rect x="0" y="0" width="24" height="100" style="fill:var(--kcs-k,currentColor)"></rect>
+          <path d="M82 8 L40 50 L82 92" fill="none" stroke-width="26" style="stroke:var(--kcs-k,currentColor)"></path>
+          <path d="M194 13 H134 V87 H194" fill="none" stroke-width="26" style="stroke:var(--kcs-cs,currentColor)"></path>
+          <path d="M300 13 H240 V50 H287 V87 H227" fill="none" stroke-width="26" style="stroke:var(--kcs-cs,currentColor)"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <div class="mt-6 grid gap-8 lg:grid-cols-2">
+      <!-- Concept D -->
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">D · Cut Wordmark — Mono</h3>
+          <span class="eyebrow text-stone-400">"Luxury contractor"</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
+          <svg viewBox="0 0 302 100" class="h-16 text-stone-900" role="img" aria-label="KCS cut wordmark, dark on light">
+            <use href="#kcs-cut"></use>
+          </svg>
+          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-stone-900">Krystal Clear Service</p>
+        </div>
+        <div class="flex flex-col items-center gap-3 bg-stone-950 px-6 py-10">
+          <svg viewBox="0 0 302 100" class="h-16 text-white" role="img" aria-label="KCS cut wordmark, light on dark">
+            <use href="#kcs-cut"></use>
+          </svg>
+          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
+        </div>
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          One color, zero gradients — reads at any size and costs nothing extra to print, embroider, or cut in vinyl
+          for the trucks. The chevron K doubles as a standalone icon (G).
+        </p>
+      </div>
+
+      <!-- Concept E -->
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">E · Cut Wordmark — Signal Blue</h3>
+          <span class="eyebrow text-stone-400">"Corporate tech"</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 bg-[#0d1b2e] px-6 py-10">
+          <svg viewBox="0 0 302 100" class="h-16" style="--kcs-k:#2762e9; --kcs-cs:#ffffff" role="img" aria-label="KCS cut wordmark, blue K">
+            <use href="#kcs-cut"></use>
+          </svg>
+          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-[#2762e9]">Krystal Clear Service</p>
+          <p class="eyebrow text-[#8fa1b3]">— Janitorial &amp; Building Maintenance —</p>
+        </div>
+        <div class="grid grid-cols-4 border-t border-stone-200">
+          {
+            [
+              { hex: "#0b0d10", name: "Ink" },
+              { hex: "#0d1b2e", name: "Deep Navy" },
+              { hex: "#2762e9", name: "Signal Blue" },
+              { hex: "#f2f5f8", name: "Cloud" },
+            ].map((c) => (
+              <div class="px-2 py-2 text-center">
+                <div class="h-8 border border-stone-200" style={`background:${c.hex}`} />
+                <p class="mt-1 font-mono text-[0.6rem] text-stone-500">{c.name}</p>
+              </div>
+            ))
+          }
+        </div>
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          The comp's palette, kept honest: one blue, no gradients. Strongest if Fidel wants to look like a national
+          facility-services company. Trade-off: tech blue is what Jani-King, Jan-Pro, and most competitors wear.
+        </p>
+      </div>
+
+      <!-- Concept F -->
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">F · Cut Wordmark — Pine &amp; Brass</h3>
+          <span class="eyebrow text-brass-600">Bridges both directions</span>
+        </div>
+        <div class="flex flex-col items-center gap-3 bg-pine-950 px-6 py-10">
+          <svg viewBox="0 0 302 100" class="h-16" style="--kcs-k:#c09a3e; --kcs-cs:#ffffff" role="img" aria-label="KCS cut wordmark, brass K on pine">
+            <use href="#kcs-cut"></use>
+          </svg>
+          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
+          <p class="eyebrow text-brass-300">Janitorial · Floor Care</p>
+        </div>
+        <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
+          <svg viewBox="0 0 302 100" class="h-16" style="--kcs-k:#a5812f; --kcs-cs:#123227" role="img" aria-label="KCS cut wordmark, brass K on white">
+            <use href="#kcs-cut"></use>
+          </svg>
+          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-pine-900">Krystal Clear Service</p>
+        </div>
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          The comp letterforms wearing the site's colors — if Fidel picks this shape, the website needs zero
+          re-theming: brass K, everything else as-is.
+        </p>
+      </div>
+
+      <!-- Concept G -->
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">G · Chevron Mark</h3>
+          <span class="eyebrow text-stone-400">Icon / favicon / patch</span>
+        </div>
+        <div class="flex items-center justify-center gap-6 bg-white px-6 py-12">
+          <svg viewBox="0 0 100 100" class="h-24" role="img" aria-label="Chevron K tile, pine">
+            <rect width="100" height="100" fill="#123227"></rect>
+            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
+            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#c09a3e" stroke-width="16"></path>
+          </svg>
+          <svg viewBox="0 0 100 100" class="h-24" role="img" aria-label="Chevron K tile, ink">
+            <rect width="100" height="100" fill="#0b0d10"></rect>
+            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
+            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#2762e9" stroke-width="16"></path>
+          </svg>
+          <svg viewBox="0 0 100 100" class="h-24" role="img" aria-label="Chevron K tile, outline">
+            <rect x="3" y="3" width="94" height="94" fill="none" stroke="#123227" stroke-width="6"></rect>
+            <rect x="20" y="18" width="14" height="64" fill="#123227"></rect>
+            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#123227" stroke-width="16"></path>
+          </svg>
+        </div>
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          The K reduced to stem + chevron — app icon, favicon, embroidered chest patch, and floor-decal sized. The
+          chevron also becomes a brand device: section dividers, bullet markers, arrow CTAs.
+        </p>
+      </div>
+    </div>
+
     <!-- Palette -->
     <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Palette</h2>
     <p class="mt-2 max-w-2xl text-stone-600">
