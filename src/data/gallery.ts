@@ -13,7 +13,29 @@ export interface GalleryImage {
   caption: string;
 }
 
+// NOTE: current entries are licensed STOCK PLACEHOLDERS (Pexels, free
+// commercial license) — replace with the client's real job-site photos
+// as they arrive. Keep captions honest: describe the service, never claim
+// a specific job site until the photo is really ours.
 export const gallery: GalleryImage[] = [
-  // e.g.:
-  // { src: "/gallery/strip-wax-after-01.jpg", alt: "High-gloss VCT floor after strip and wax", caption: "VCT strip & wax — after · office corridor" },
+  {
+    src: "/gallery/polished-corridor.jpg",
+    alt: "Commercial corridor with a high-gloss reflective floor finish",
+    caption: "The standard: wet-look shine on commercial floors",
+  },
+  {
+    src: "/gallery/janitorial-cart.jpg",
+    alt: "Janitorial worker with a cleaning cart in a commercial interior",
+    caption: "Nightly janitorial — consistent crews, full scope",
+  },
+  {
+    src: "/gallery/school-hallway.jpg",
+    alt: "Bright school hallway with clean reflective flooring",
+    caption: "School corridors cleaned around the academic calendar",
+  },
+  {
+    src: "/gallery/marble-lobby.jpg",
+    alt: "Marble lobby floor polished to full clarity",
+    caption: "Marble & natural stone brought to full clarity",
+  },
 ];

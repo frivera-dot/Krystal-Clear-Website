@@ -36,6 +36,14 @@ const related = services.filter((s) => s.slug !== service.slug).slice(0, 4);
       <h1 class="text-4xl font-extrabold tracking-tight text-pine-900">{service.heroHeadline}</h1>
       <p class="mt-4 text-lg leading-relaxed text-stone-600">{service.heroSub}</p>
 
+      {/* Stock placeholder photo (Pexels, free commercial license) — swap for a
+          real KCS job photo with the same filename when client assets arrive. */}
+      <img
+        src={`/photos/services/${service.slug}.jpg`}
+        alt={`${service.name} — commercial facility`}
+        class="mt-8 aspect-[16/9] w-full max-w-3xl border border-pine-900/20 object-cover"
+      />
+
       <div class="copy mt-8 max-w-3xl text-stone-700">
         {service.overview.map((p) => <p>{p}</p>)}
       </div>
