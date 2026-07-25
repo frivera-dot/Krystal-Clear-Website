@@ -1,5 +1,6 @@
 // Central business config — single source of truth for NAP (Name, Address, Phone).
-// TODO: confirm final domain with client (the "no s" domain from the meeting).
+// Domain is live. Address matches the Google Business Profile exactly
+// (2828 — Fidel's corrected number from the kickoff call; GBP is authoritative).
 export const SITE = {
   brand: "KCS",
   legalName: "Krystal Clear Service",
@@ -10,7 +11,7 @@ export const SITE = {
   phoneHref: "tel:+19253015566",
   email: "info@krystalclearservice.com", // TODO: confirm with client
   address: {
-    street: "2855 Contra Costa Blvd, Suite C",
+    street: "2828 Contra Costa Blvd, Suite C",
     city: "Pleasant Hill",
     state: "CA",
     zip: "94523",
