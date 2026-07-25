@@ -36,8 +36,8 @@ const related = services.filter((s) => s.slug !== service.slug).slice(0, 4);
       <h1 class="text-4xl font-extrabold tracking-tight text-pine-900">{service.heroHeadline}</h1>
       <p class="mt-4 text-lg leading-relaxed text-stone-600">{service.heroSub}</p>
 
-      {/* Stock placeholder photo (Pexels, free commercial license) — swap for a
-          real KCS job photo with the same filename when client assets arrive. */}
+      {/* Slot photo: most are real KCS job photos; remaining stock slots are
+          listed in README.md — swap by overwriting the same filename. */}
       <img
         src={`/photos/services/${service.slug}.jpg`}
         alt={`${service.name} — commercial facility`}
