@@ -36,6 +36,6 @@ Forms: the quote form is wired for **Netlify Forms** (`name="quote"`), redirecti
 
 - [ ] Confirm final domain (the "no s" domain) → update `site` in `astro.config.mjs`, `src/config/site.ts`, `public/robots.txt`
 - [ ] Confirm business email in `src/config/site.ts`
-- [ ] Swap stock placeholder photos for real client photos — same filenames in `public/photos/` and `public/gallery/` (current images: Pexels, free commercial license)
+- [x] Real client job photos migrated from krystalclearservices.com (full export in `public/photos/originals/`). Remaining stock (Pexels): windows, gyms, churches, HOA, property-management, retail — swap when real shots exist
 - [ ] Review logo direction with client — three concepts live at `/brand/` (noindex, internal)
 - [ ] Point domain DNS at Netlify and enable form notifications

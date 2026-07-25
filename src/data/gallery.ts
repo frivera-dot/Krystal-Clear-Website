@@ -13,29 +13,38 @@ export interface GalleryImage {
   caption: string;
 }
 
-// NOTE: current entries are licensed STOCK PLACEHOLDERS (Pexels, free
-// commercial license) — replace with the client's real job-site photos
-// as they arrive. Keep captions honest: describe the service, never claim
-// a specific job site until the photo is really ours.
+// REAL KCS job-site photos, migrated from the client's previous website
+// (krystalclearservices.com) with the owner's permission. Full export
+// archived in /public/photos/originals/.
 export const gallery: GalleryImage[] = [
   {
     src: "/gallery/polished-corridor.jpg",
-    alt: "Commercial corridor with a high-gloss reflective floor finish",
-    caption: "The standard: wet-look shine on commercial floors",
+    alt: "Freshly stripped and waxed VCT corridor with a wet-look shine",
+    caption: "VCT strip & wax — the full wet-look rebuild",
   },
   {
     src: "/gallery/janitorial-cart.jpg",
-    alt: "Janitorial worker with a cleaning cart in a commercial interior",
-    caption: "Nightly janitorial — consistent crews, full scope",
-  },
-  {
-    src: "/gallery/school-hallway.jpg",
-    alt: "Bright school hallway with clean reflective flooring",
-    caption: "School corridors cleaned around the academic calendar",
+    alt: "KCS crew member vacuuming a dental clinic with a backpack vacuum at night",
+    caption: "Night crew — servicing a dental clinic after hours",
   },
   {
     src: "/gallery/marble-lobby.jpg",
-    alt: "Marble lobby floor polished to full clarity",
-    caption: "Marble & natural stone brought to full clarity",
+    alt: "Stained concrete floor burnished to a high-gloss mirror finish",
+    caption: "Stained concrete, burnished to a mirror finish",
+  },
+  {
+    src: "/gallery/carpet-midpass.jpg",
+    alt: "Commercial carpet mid-extraction with a visible clean line",
+    caption: "Carpet extraction — the clean line, mid-pass",
+  },
+  {
+    src: "/gallery/marble-maintenance.jpg",
+    alt: "Floor machines and equipment staged on a marble corridor during a maintenance night",
+    caption: "Marble maintenance night — crew staged and working",
+  },
+  {
+    src: "/gallery/school-hallway.jpg",
+    alt: "Glossy finished floor in an industrial controlled environment",
+    caption: "Industrial floor, finished for a controlled environment",
   },
 ];
