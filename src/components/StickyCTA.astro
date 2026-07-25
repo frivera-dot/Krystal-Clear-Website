@@ -20,10 +20,19 @@ import { SITE } from "../config/site";
   </a>
   <a
     href="/contact/"
+    data-quote-cta
     class="flex items-center justify-center bg-brass-500 py-3.5 font-display text-base font-bold uppercase tracking-wider text-pine-950 active:bg-brass-400"
   >
     Free Quote
   </a>
 </div>
+
+<script>
+  // If the current page has a quote form, jump to it instead of navigating away.
+  const quoteTarget = document.getElementById("quote");
+  if (quoteTarget) {
+    document.querySelectorAll('[data-quote-cta]').forEach((a) => a.setAttribute("href", "#quote"));
+  }
+</script>
 <!-- Spacer so the fixed bar never covers footer content on mobile -->
 <div class="h-14 lg:hidden" aria-hidden="true"></div>
