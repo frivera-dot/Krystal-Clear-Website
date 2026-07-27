@@ -1,29 +1,17 @@
 ---
 // Internal brand board — for client presentation only (noindex, excluded from sitemap).
-// Orbitron loads only on this page: the squared industrial face for Direction 2 comps.
+// SELECTED DIRECTION: Concept F — comp letterforms (Orbitron Black), pine & brass
+// colorways. This board now holds the F family only: the two original cuts plus
+// dimensional (3D / shadow) explorations for signage, print, and web.
 import "@fontsource/orbitron/900.css";
 import Layout from "../../layouts/Layout.astro";
-import PhotoRotator from "../../components/PhotoRotator.astro";
-
-// Placeholder slides for the rotator demo (branded SVG frames, swapped for
-// real job photos the day the client sends them).
-const demoSlide = (label: string) =>
-  "data:image/svg+xml," +
-  encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000"><rect width="1600" height="1000" fill="#123227"/><rect y="640" width="1600" height="4" fill="#c09a3e"/><text x="800" y="560" text-anchor="middle" font-family="Arial Narrow, Impact, sans-serif" font-weight="700" font-size="150" fill="#ffffff">${label}</text><text x="800" y="800" text-anchor="middle" font-family="Courier New, monospace" letter-spacing="14" font-size="42" fill="#dcc077">JOB PHOTO SLOT — AWAITING CREW SHOTS</text></svg>`
-  );
-const demoImages = [
-  { src: demoSlide("STRIP + WAX — AFTER"), alt: "Placeholder for strip and wax after photo", caption: "VCT strip & wax — after · your photo here" },
-  { src: demoSlide("POLISHED CONCRETE"), alt: "Placeholder for polished concrete photo", caption: "Diamond-polished concrete · your photo here" },
-  { src: demoSlide("NIGHT CREW ON SITE"), alt: "Placeholder for night crew photo", caption: "Night crew on site · your photo here" },
-];
 
 const palette = [
-  { name: "Pine 950", hex: "#0b211a", note: "Ink — headlines, footer" },
+  { name: "Pine 950", hex: "#0b211a", note: "Ink — dark surfaces, footer" },
   { name: "Pine 900", hex: "#123227", note: "Primary — uniform green" },
   { name: "Pine 700", hex: "#1f523a", note: "Links, secondary" },
   { name: "Pine 50", hex: "#f0f4f0", note: "Tinted surfaces" },
-  { name: "Brass 500", hex: "#c09a3e", note: "Accent — CTAs, rules" },
+  { name: "Brass 500", hex: "#c09a3e", note: "Accent — the K, CTAs, rules" },
   { name: "Brass 300", hex: "#dcc077", note: "Accent on dark" },
   { name: "Stone 700", hex: "#44403b", note: "Body text (warm gray)" },
   { name: "White", hex: "#ffffff", note: "Primary surface" },
@@ -36,558 +24,117 @@ const palette = [
   noindex
 >
   <section class="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-    <p class="eyebrow text-brass-600">Internal — for review with Fidel</p>
-    <h1 class="mt-2 font-display text-4xl font-bold uppercase text-pine-900 sm:text-5xl">KCS Brand Board</h1>
+    <p class="eyebrow text-brass-600">Internal — selected direction</p>
+    <h1 class="mt-2 font-display text-4xl font-bold uppercase text-pine-900 sm:text-5xl">KCS Logo — Concept F</h1>
     <p class="mt-4 max-w-2xl text-lg text-stone-600">
-      Direction: <strong>uniform green &amp; lobby brass</strong>. The dark green of janitorial work shirts, the brass
-      of the door hardware in the buildings KCS cleans, and a wet-floor reflection as the signature — because shine is
-      the product.
+      Client-approved direction: the cut wordmark in the <strong>pine &amp; brass</strong> colorways. Below: the two
+      original cuts, plus dimensional explorations — extruded, floating, machined metal, and the LED-backlit
+      treatment Fidel described for the office door sign.
     </p>
 
-    <!-- Logo concepts -->
-    <h2 class="mt-14 font-display text-2xl font-bold uppercase text-pine-900">Logo Concepts</h2>
-
+    <!-- Original F cuts (unchanged) -->
+    <h2 class="mt-14 font-display text-2xl font-bold uppercase text-pine-900">F · Original Cuts</h2>
     <div class="mt-6 grid gap-8 lg:grid-cols-2">
-      <!-- Concept A -->
       <div class="border border-stone-200">
         <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">A · Reflection Wordmark</h3>
-          <span class="eyebrow text-brass-600">Recommended — in use</span>
+          <h3 class="font-bold text-pine-900">F1 · Flat on Pine</h3>
+          <span class="eyebrow text-brass-600">Web · documents</span>
         </div>
-        <div class="flex flex-col items-center bg-white px-6 py-12">
-          <span class="relative inline-flex flex-col items-center leading-none">
-            <span class="font-display text-6xl font-bold tracking-[0.04em] text-pine-900">KCS</span>
-            <span class="mt-1 block h-[5px] w-full bg-brass-500"></span>
-            <span aria-hidden="true" class="reflection-copy absolute top-full mt-2 font-display text-6xl font-bold leading-none tracking-[0.04em] text-pine-900">KCS</span>
-          </span>
-          <span class="mt-20 block text-center">
-            <span class="block text-lg font-semibold tracking-wide text-pine-900">Krystal Clear Service</span>
-            <span class="eyebrow block text-brass-600">Janitorial · Floor Care</span>
-          </span>
-        </div>
-        <div class="border-t border-stone-200 bg-pine-950 px-6 py-10 text-center">
-          <span class="relative inline-flex flex-col items-center leading-none">
-            <span class="font-display text-5xl font-bold tracking-[0.04em] text-white">KCS</span>
-            <span class="mt-1 block h-[4px] w-full bg-brass-500"></span>
-            <span aria-hidden="true" class="reflection-copy absolute top-full mt-1.5 font-display text-5xl font-bold leading-none tracking-[0.04em] text-white">KCS</span>
-          </span>
-        </div>
-        <p class="px-5 py-4 text-sm text-stone-600">
-          The mark is the product: a freshly burnished floor reflects the room. Brass baseline = the gloss line. Works
-          at any size, in one color, embroidered on uniforms, or cut in stainless for the office door.
-        </p>
-      </div>
-
-      <!-- Concept B -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">B · Tile Monogram</h3>
-          <span class="eyebrow text-stone-400">Alternate</span>
-        </div>
-        <div class="flex items-center justify-center gap-8 bg-white px-6 py-12">
-          <span class="inline-flex flex-col items-center">
-            <span class="relative inline-flex h-28 w-28 items-center justify-center border-[3px] border-pine-900">
-              <span class="absolute inset-1.5 border border-brass-500"></span>
-              <span class="font-display text-5xl font-bold text-pine-900">K</span>
-            </span>
-            <span class="mt-3 block text-center">
-              <span class="block font-display text-xl font-bold uppercase tracking-[0.14em] text-pine-900">Krystal Clear</span>
-              <span class="eyebrow block text-brass-600">Service · Est. Pleasant Hill</span>
-            </span>
-          </span>
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          A floor tile with a brass inlay border — nods to the stone and VCT work. Strong as a stamp, app icon, or
-          embroidered patch; reads more "established trade company."
-        </p>
-      </div>
-
-      <!-- Concept C -->
-      <div class="border border-stone-200 lg:col-span-2">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">C · Crew Badge</h3>
-          <span class="eyebrow text-stone-400">Alternate</span>
-        </div>
-        <div class="flex items-center justify-center bg-white px-6 py-10">
-          <svg width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="KCS crew badge logo concept">
-            <circle cx="110" cy="110" r="104" fill="#123227" />
-            <circle cx="110" cy="110" r="96" fill="none" stroke="#c09a3e" stroke-width="2" />
-            <circle cx="110" cy="110" r="70" fill="none" stroke="#c09a3e" stroke-width="1" />
-            <defs>
-              <path id="topArc" d="M 110,110 m -83,0 a 83,83 0 1,1 166,0" />
-              <path id="bottomArc" d="M 110,110 m -83,0 a 83,83 0 1,0 166,0" />
-            </defs>
-            <text font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="4" fill="#dcc077">
-              <textPath href="#topArc" startOffset="50%" text-anchor="middle">KRYSTAL CLEAR SERVICE</textPath>
-            </text>
-            <text font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="3" fill="#dcc077">
-              <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">JANITORIAL · FLOOR CARE</textPath>
-            </text>
-            <text x="110" y="124" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-weight="700" font-size="52" fill="#ffffff">KCS</text>
-            <rect x="80" y="132" width="60" height="3" fill="#c09a3e" />
-          </svg>
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          A uniform-patch roundel for trucks, polos, and the QR check-in signage later. Pairs with Concept A (badge
-          for crew gear, wordmark for the website and documents).
-        </p>
-      </div>
-    </div>
-
-    <!-- ============ Direction 2: Angular Industrial (from client comps) ============ -->
-    <h2 class="mt-20 font-display text-2xl font-bold uppercase text-pine-900">Direction 2 · Angular Industrial</h2>
-    <p class="mt-2 max-w-2xl text-stone-600">
-      Built from the comp set: heavy geometric letterforms with a chevron-cut K, wide-tracked sub-line. Shown in the
-      comp palettes and re-cut in the Direction 1 pine &amp; brass system. Wordmarks are set in Orbitron Black — the
-      closest open-license face to the comps' squared Eurostile-Extended letterforms, so whichever version Fidel
-      picks can go straight onto the website as real, licensed type.&ensp;<strong>Note:</strong> the comps read "Services" — the confirmed legal/brand name is&nbsp;<em>Krystal Clear Service</em>&nbsp;(no s, matching the domain and email), used below.
-    </p>
-
-    <div class="mt-6 grid gap-8 lg:grid-cols-2">
-      <!-- Concept D -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">D · Cut Wordmark — Mono</h3>
-          <span class="eyebrow text-stone-400">"Luxury contractor"</span>
-        </div>
-        <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
-          <p class="cut-wordmark text-stone-900">KCS</p>
-          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-stone-900">Krystal Clear Service</p>
-        </div>
-        <div class="flex flex-col items-center gap-3 bg-stone-950 px-6 py-10">
-          <p class="cut-wordmark text-white">KCS</p>
-          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          One color, zero gradients — reads at any size and costs nothing extra to print, embroider, or cut in vinyl
-          for the trucks. Pairs with the chevron icon (G) for small-format uses.
-        </p>
-      </div>
-
-      <!-- Concept E -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">E · Cut Wordmark — Signal Blue</h3>
-          <span class="eyebrow text-stone-400">"Corporate tech"</span>
-        </div>
-        <div class="flex flex-col items-center gap-3 bg-[#0d1b2e] px-6 py-10">
-          <p class="cut-wordmark text-white"><span style="color:#2762e9">K</span>CS</p>
-          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-[#2762e9]">Krystal Clear Service</p>
-          <p class="eyebrow text-[#8fa1b3]">— Janitorial &amp; Building Maintenance —</p>
-        </div>
-        <div class="grid grid-cols-4 border-t border-stone-200">
-          {
-            [
-              { hex: "#0b0d10", name: "Ink" },
-              { hex: "#0d1b2e", name: "Deep Navy" },
-              { hex: "#2762e9", name: "Signal Blue" },
-              { hex: "#f2f5f8", name: "Cloud" },
-            ].map((c) => (
-              <div class="px-2 py-2 text-center">
-                <div class="h-8 border border-stone-200" style={`background:${c.hex}`} />
-                <p class="mt-1 font-mono text-[0.6rem] text-stone-500">{c.name}</p>
-              </div>
-            ))
-          }
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          The comp's palette, kept honest: one blue, no gradients. Strongest if Fidel wants to look like a national
-          facility-services company. Trade-off: tech blue is what Jani-King, Jan-Pro, and most competitors wear.
-        </p>
-      </div>
-
-      <!-- Concept F -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">F · Cut Wordmark — Pine &amp; Brass</h3>
-          <span class="eyebrow text-brass-600">Bridges both directions</span>
-        </div>
-        <div class="flex flex-col items-center gap-3 bg-pine-950 px-6 py-10">
+        <div class="flex flex-col items-center gap-4 bg-pine-950 px-6 py-12">
           <p class="cut-wordmark text-white"><span class="text-brass-500">K</span>CS</p>
-          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
+          <p class="mt-1 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
           <p class="eyebrow text-brass-300">Janitorial · Floor Care</p>
         </div>
-        <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
+      </div>
+      <div class="border border-stone-200">
+        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
+          <h3 class="font-bold text-pine-900">F2 · Flat on White</h3>
+          <span class="eyebrow text-brass-600">Print · invoices</span>
+        </div>
+        <div class="flex flex-col items-center gap-4 bg-white px-6 py-12">
           <p class="cut-wordmark text-pine-900"><span class="text-brass-600">K</span>CS</p>
-          <p class="mt-2 font-display text-sm font-semibold uppercase tracking-[0.42em] text-pine-900">Krystal Clear Service</p>
+          <p class="mt-1 font-display text-sm font-semibold uppercase tracking-[0.42em] text-pine-900">Krystal Clear Service</p>
         </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          The comp letterforms wearing the site's colors — if Fidel picks this shape, the website needs zero
-          re-theming: brass K, everything else as-is.
-        </p>
-      </div>
-
-      <!-- Concept G -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">G · Chevron Mark</h3>
-          <span class="eyebrow text-stone-400">Icon / favicon / patch</span>
-        </div>
-        <div class="flex flex-wrap items-center justify-center gap-4 bg-white px-6 py-12 sm:gap-6">
-          <svg viewBox="0 0 100 100" class="h-20 sm:h-24" role="img" aria-label="Chevron K tile, pine">
-            <rect width="100" height="100" fill="#123227"></rect>
-            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
-            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#c09a3e" stroke-width="16"></path>
-          </svg>
-          <svg viewBox="0 0 100 100" class="h-20 sm:h-24" role="img" aria-label="Chevron K tile, ink">
-            <rect width="100" height="100" fill="#0b0d10"></rect>
-            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
-            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#2762e9" stroke-width="16"></path>
-          </svg>
-          <svg viewBox="0 0 100 100" class="h-20 sm:h-24" role="img" aria-label="Chevron K tile, outline">
-            <rect x="3" y="3" width="94" height="94" fill="none" stroke="#123227" stroke-width="6"></rect>
-            <rect x="20" y="18" width="14" height="64" fill="#123227"></rect>
-            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#123227" stroke-width="16"></path>
-          </svg>
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          The K reduced to stem + chevron — app icon, favicon, embroidered chest patch, and floor-decal sized. The
-          chevron also becomes a brand device: section dividers, bullet markers, arrow CTAs.
-        </p>
       </div>
     </div>
 
-    <!-- ============ Direction 3: Concept Marks ============ -->
-    <h2 class="mt-20 font-display text-2xl font-bold uppercase text-pine-900">Direction 3 · Concept Marks</h2>
+    <!-- Dimensional explorations -->
+    <h2 class="mt-14 font-display text-2xl font-bold uppercase text-pine-900">F · Dimensional Explorations</h2>
     <p class="mt-2 max-w-2xl text-stone-600">
-      Directions 1 and 2 are typography wearing colors. These three are <strong>ideas</strong> — each mark contains
-      one thing from KCS's actual work, and each comes with a one-sentence story Fidel can tell a client. Flat
-      geometry, one accent, no gradients: they embroider, stamp, and cut in metal without losing anything.
+      Same letterforms, four physical treatments. Each maps to a real production method, so what Fidel approves on
+      screen is buildable in the shop.
     </p>
 
-    <div class="mt-6 grid gap-8 lg:grid-cols-3">
-      <!-- Concept H: Gleam K -->
+    <div class="mt-6 grid gap-8 lg:grid-cols-2">
+      <!-- F3: Extruded block -->
       <div class="border border-stone-200">
         <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">H · Gleam K</h3>
-          <span class="eyebrow text-brass-600">The shine is cut in</span>
+          <h3 class="font-bold text-pine-900">F3 · Extruded Block</h3>
+          <span class="eyebrow text-brass-600">Vehicle wraps · banners</span>
         </div>
-        <div class="flex items-center justify-center gap-6 bg-white px-6 py-10">
-          <svg viewBox="0 0 100 100" class="h-28" role="img" aria-label="Gleam K mark on pine tile">
-            <rect width="100" height="100" fill="#123227"></rect>
-            <rect x="16" y="16" width="20" height="68" fill="#ffffff"></rect>
-            <polygon points="36,50 68,16 86,16 54,50" fill="#ffffff"></polygon>
-            <polygon points="36,50 54,50 86,84 68,84" fill="#ffffff"></polygon>
-            <path d="M48 35 Q48 50 63 50 Q48 50 48 65 Q48 50 33 50 Q48 50 48 35 Z" fill="#123227"></path>
-          </svg>
-          <svg viewBox="0 0 100 100" class="h-28" role="img" aria-label="Gleam K mark on white">
-            <rect x="16" y="16" width="20" height="68" fill="#123227"></rect>
-            <polygon points="36,50 68,16 86,16 54,50" fill="#123227"></polygon>
-            <polygon points="36,50 54,50 86,84 68,84" fill="#123227"></polygon>
-            <path d="M48 35 Q48 50 63 50 Q48 50 48 65 Q48 50 33 50 Q48 50 48 35 Z" fill="#c09a3e"></path>
-          </svg>
+        <div class="flex flex-col items-center gap-4 bg-pine-950 px-6 py-14">
+          <p class="cut-wordmark f-extrude text-white"><span class="k">K</span>CS</p>
+          <p class="mt-3 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white">Krystal Clear Service</p>
         </div>
         <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          <strong>The story:</strong> "That four-point gleam on a freshly burnished floor? It's built into our K."
-          The shine is negative space — light, not paint — cut into the letter's elbow where the work happens.
+          Solid diagonal extrusion in deep pine — sign-shop dimensional letters. Reads big and confident at
+          distance; built for the truck doors and jobsite banners.
         </p>
       </div>
 
-      <!-- Concept I: Mirror K -->
+      <!-- F4: Floating soft shadow -->
       <div class="border border-stone-200">
         <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">I · Mirror K</h3>
-          <span class="eyebrow text-brass-600">The reflection, portable</span>
+          <h3 class="font-bold text-pine-900">F4 · Floating</h3>
+          <span class="eyebrow text-brass-600">Website hero · proposals</span>
         </div>
-        <div class="flex items-center justify-center gap-6 bg-white px-6 py-10">
-          <svg viewBox="0 0 100 110" class="h-28" role="img" aria-label="Mirror K emblem, pine on white">
-            <g fill="#123227">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-            <rect x="22" y="55" width="56" height="3" fill="#c09a3e"></rect>
-            <g fill="#123227" opacity="0.25" transform="translate(0,113) scale(1,-1)">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-          </svg>
-          <svg viewBox="0 0 100 110" class="h-28" role="img" aria-label="Mirror K emblem on pine tile">
-            <rect width="100" height="110" fill="#0b211a"></rect>
-            <g fill="#ffffff">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-            <rect x="22" y="55" width="56" height="3" fill="#c09a3e"></rect>
-            <g fill="#ffffff" opacity="0.22" transform="translate(0,113) scale(1,-1)">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-          </svg>
+        <div class="flex flex-col items-center gap-4 bg-pine-50 px-6 py-14">
+          <p class="cut-wordmark f-float text-pine-900"><span class="text-brass-600">K</span>CS</p>
+          <p class="mt-3 font-display text-sm font-semibold uppercase tracking-[0.42em] text-pine-900">Krystal Clear Service</p>
         </div>
         <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          <strong>The story:</strong> "A floor cleaned by KCS shows you the room twice." The website's wet-floor
-          reflection signature compressed into an emblem — same idea at favicon size or on a chest patch.
+          Soft grounded shadow lifting the letters off the surface — the subtle-depth look from the comps. The
+          quiet one: proposals, letterhead, web headers.
         </p>
       </div>
 
-      <!-- Concept J: Sign-Off K -->
+      <!-- F5: Machined metal -->
       <div class="border border-stone-200">
         <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h3 class="font-bold text-pine-900">J · Sign-Off K</h3>
-          <span class="eyebrow text-brass-600">The checkmark leg</span>
+          <h3 class="font-bold text-pine-900">F5 · Machined Metal</h3>
+          <span class="eyebrow text-brass-600">Stainless door plaque</span>
         </div>
-        <div class="flex items-center justify-center gap-6 bg-white px-6 py-10">
-          <svg viewBox="0 0 112 100" class="h-28" role="img" aria-label="Sign-off K mark, check leg, on white">
-            <rect x="16" y="14" width="18" height="72" fill="#123227"></rect>
-            <polygon points="34,54 64,14 82,14 52,54" fill="#123227"></polygon>
-            <path d="M34 50 L58 82 L98 24" fill="none" stroke="#c09a3e" stroke-width="15"></path>
-          </svg>
-          <svg viewBox="0 0 112 100" class="h-28" role="img" aria-label="Sign-off K mark on pine tile">
-            <rect width="112" height="100" fill="#123227"></rect>
-            <rect x="16" y="14" width="18" height="72" fill="#ffffff"></rect>
-            <polygon points="34,54 64,14 82,14 52,54" fill="#ffffff"></polygon>
-            <path d="M34 50 L58 82 L98 24" fill="none" stroke="#c09a3e" stroke-width="15"></path>
-          </svg>
+        <div class="flex flex-col items-center gap-4 bg-[linear-gradient(160deg,#1a3b2d_0%,#0b211a_70%)] px-6 py-14">
+          <p class="cut-wordmark f-metal"><span class="k">K</span>CS</p>
+          <p class="mt-3 font-display text-sm font-semibold uppercase tracking-[0.42em] text-white/90">Krystal Clear Service</p>
         </div>
         <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
-          <strong>The story:</strong> "Every job ends with a signed checklist — so our K signs itself." The leg of
-          the K is the sign-off tick from the sheet on the back of every restroom door.
+          Brushed-metal gradients with machined bevel edges — brass K, steel CS. This is the cut-stainless plaque
+          treatment for the Pleasant Hill office door.
         </p>
       </div>
-    </div>
 
-    <!-- Application: how a concept mark lives in the system -->
-    <div class="mt-8 border border-stone-200">
-      <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-        <h3 class="font-bold text-pine-900">In Use · Truck Door / Signage Lockup</h3>
-        <span class="eyebrow text-stone-400">Concept H shown</span>
-      </div>
-      <div class="bg-pine-950 px-8 py-10">
-        <div class="mx-auto flex max-w-xl items-center gap-6 max-sm:flex-col max-sm:text-center">
-          <svg viewBox="0 0 100 100" class="h-20 shrink-0" role="img" aria-label="Gleam K tile">
-            <rect width="100" height="100" fill="#123227" stroke="#c09a3e" stroke-width="2"></rect>
-            <rect x="16" y="16" width="20" height="68" fill="#ffffff"></rect>
-            <polygon points="36,50 68,16 86,16 54,50" fill="#ffffff"></polygon>
-            <polygon points="36,50 54,50 86,84 68,84" fill="#ffffff"></polygon>
-            <path d="M48 35 Q48 50 63 50 Q48 50 48 65 Q48 50 33 50 Q48 50 48 35 Z" fill="#123227"></path>
-          </svg>
-          <div>
-            <p class="font-display text-3xl font-bold uppercase leading-none text-white">Krystal Clear Service</p>
-            <p class="eyebrow mt-2 text-brass-300">Commercial Janitorial · Floor Care · (925) 301-5566</p>
-          </div>
-        </div>
-      </div>
-      <p class="px-5 py-4 text-sm text-stone-600">
-        Any of the three marks drops into this lockup — tile left, Barlow Condensed name, work-order sub-line. Same
-        system on trucks, door signage, proposals, and the crew patch.
-      </p>
-    </div>
-
-    <!-- ============ Direction 4: Comp recreations + colorway tests ============ -->
-    <h2 class="mt-20 font-display text-2xl font-bold uppercase text-pine-900">Direction 4 · Comp Studies &amp; Color Tests</h2>
-    <p class="mt-2 max-w-2xl text-stone-600">
-      Two studies from the comp set: faithful recreations of the three comp logos, and the current KCS marks
-      re-dressed in each comp palette so the color question can be judged apart from the letterform question.
-      Sub-lines use the confirmed singular "Service."
-    </p>
-
-    <!-- Custom extended letterforms for the Option 1 recreation -->
-    <svg class="hidden" aria-hidden="true">
-      <defs>
-        <symbol id="kcs-ext" viewBox="0 0 310 100">
-          <mask id="kcs-ext-notch" maskUnits="userSpaceOnUse" x="-5" y="-5" width="120" height="110">
-            <rect x="-5" y="-5" width="120" height="110" fill="white"></rect>
-            <path d="M60 30 L36 50 L60 70" fill="none" stroke="black" stroke-width="13"></path>
-          </mask>
-          <g mask="url(#kcs-ext-notch)" fill="currentColor">
-            <rect x="0" y="0" width="26" height="100"></rect>
-            <polygon points="26,30 56,0 84,0 26,58"></polygon>
-            <polygon points="26,70 56,100 84,100 26,42"></polygon>
-          </g>
-          <path fill="currentColor" d="M100 0 H194 L168 26 H126 V74 H168 L194 100 H100 Z"></path>
-          <path fill="currentColor" d="M222 0 H310 V26 H236 V37 H310 V88 L298 100 H210 V74 H284 V63 H210 V12 Z"></path>
-        </symbol>
-      </defs>
-    </svg>
-
-    <h3 class="mt-8 font-bold text-pine-900">Recreations of the three comps</h3>
-    <div class="mt-4 grid gap-8 lg:grid-cols-3">
-      <!-- Recreation: Option 1 -->
+      <!-- F6: LED backlit -->
       <div class="border border-stone-200">
         <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h4 class="text-sm font-bold text-pine-900">R1 · "Luxury Contractor"</h4>
-          <span class="eyebrow text-stone-400">Comp option 1</span>
+          <h3 class="font-bold text-pine-900">F6 · LED Backlit</h3>
+          <span class="eyebrow text-brass-600">The door sign Fidel described</span>
         </div>
-        <div class="flex flex-col items-center gap-4 bg-[#0a0a0a] px-6 py-12">
-          <svg viewBox="0 0 310 100" class="h-12 text-white" role="img" aria-label="KCS extended wordmark recreation, white on black">
-            <use href="#kcs-ext"></use>
-          </svg>
-          <p class="font-sans text-xs font-light uppercase tracking-[0.5em] text-white">Krystal Clear Service</p>
+        <div class="flex flex-col items-center gap-4 bg-[#06120d] px-6 py-14">
+          <p class="cut-wordmark f-backlit text-white"><span class="k">K</span>CS</p>
+          <p class="mt-3 font-display text-sm font-semibold uppercase tracking-[0.42em] text-pine-200">Krystal Clear Service</p>
         </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-xs text-stone-600">
-          Extended cut letterforms, arrow-notched K, sheared C and S terminals. Pure black/white — cheapest to
-          produce everywhere.
+        <p class="border-t border-stone-200 px-5 py-4 text-sm text-stone-600">
+          Halo-lit metal letters — the "nice KCS logo with an LED light in the back, but metal" from the kickoff
+          call. Warm brass glow behind the K, cool white behind CS.
         </p>
       </div>
-
-      <!-- Recreation: Option 2 -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h4 class="text-sm font-bold text-pine-900">R2 · "Corporate Tech"</h4>
-          <span class="eyebrow text-stone-400">Comp option 2</span>
-        </div>
-        <div class="flex flex-col items-center gap-3 bg-[#0d1b2e] px-6 py-10">
-          <p class="rec-orbitron text-white"><span style="color:#2762e9">K</span>CS</p>
-          <p class="font-sans text-xs font-light uppercase tracking-[0.5em] text-[#2762e9]">Krystal Clear Service</p>
-          <p class="eyebrow text-[#8fa1b3]">— Janitorial &amp; Building Maintenance —</p>
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-xs text-stone-600">
-          Rounded tech letterforms (Orbitron Black), signal-blue K on deep navy, double sub-line with rules.
-        </p>
-      </div>
-
-      <!-- Recreation: Option 3 -->
-      <div class="border border-stone-200">
-        <div class="flex items-center justify-between border-b border-stone-200 px-5 py-3">
-          <h4 class="text-sm font-bold text-pine-900">R3 · "Facility Partner"</h4>
-          <span class="eyebrow text-stone-400">Comp option 3</span>
-        </div>
-        <div class="flex flex-col items-center gap-3 bg-white px-6 py-10">
-          <p class="rec-orbitron relative text-[#111318]">
-            <span class="relative inline-block">K<svg viewBox="0 0 40 30" class="absolute left-[46%] top-[30%] h-[0.32em] w-auto" aria-hidden="true"><polygon points="0,30 40,0 28,30" fill="#2762e9"></polygon><polygon points="0,30 40,0 20,8" fill="#67a0f4"></polygon></svg></span>CS
-          </p>
-          <p class="font-sans text-xs font-light uppercase tracking-[0.5em] text-[#111318]">
-            Krystal <span class="border-b-2 border-[#2762e9] pb-0.5">Clear</span> Service
-          </p>
-          <p class="eyebrow text-stone-400">Janitorial &amp; Building Maintenance</p>
-        </div>
-        <p class="border-t border-stone-200 px-5 py-4 text-xs text-stone-600">
-          Light treatment with the blue crystal facet set into the K and the underlined "Clear" — the most
-          "unique/minimal/memorable" of the three.
-        </p>
-      </div>
-    </div>
-
-    <h3 class="mt-12 font-bold text-pine-900">Current KCS marks in the comp palettes</h3>
-    <p class="mt-1 max-w-2xl text-sm text-stone-600">
-      Same marks, three wardrobes. Row by row: reflection wordmark (A), chevron tile (G), mirror K (I).
-    </p>
-    <div class="mt-4 overflow-hidden border border-stone-200">
-      <div class="grid grid-cols-3 divide-x divide-stone-200 border-b border-stone-200 bg-stone-50">
-        <p class="eyebrow px-4 py-2 text-stone-500">Ink &amp; White</p>
-        <p class="eyebrow px-4 py-2 text-stone-500">Navy &amp; Signal Blue</p>
-        <p class="eyebrow px-4 py-2 text-stone-500">Light &amp; Blue</p>
-      </div>
-
-      <!-- Row: reflection wordmark A -->
-      <div class="grid grid-cols-3 divide-x divide-stone-200 border-b border-stone-200">
-        <div class="flex items-center justify-center bg-[#0a0a0a] px-4 py-10">
-          <span class="relative inline-flex flex-col items-center leading-none">
-            <span class="font-display text-4xl font-bold tracking-[0.04em] text-white">KCS</span>
-            <span class="mt-1 block h-[3px] w-full bg-white/70"></span>
-            <span aria-hidden="true" class="reflection-copy absolute top-full mt-1 font-display text-4xl font-bold leading-none tracking-[0.04em] text-white">KCS</span>
-          </span>
-        </div>
-        <div class="flex items-center justify-center bg-[#0d1b2e] px-4 py-10">
-          <span class="relative inline-flex flex-col items-center leading-none">
-            <span class="font-display text-4xl font-bold tracking-[0.04em] text-white">KCS</span>
-            <span class="mt-1 block h-[3px] w-full bg-[#2762e9]"></span>
-            <span aria-hidden="true" class="reflection-copy absolute top-full mt-1 font-display text-4xl font-bold leading-none tracking-[0.04em] text-white">KCS</span>
-          </span>
-        </div>
-        <div class="flex items-center justify-center bg-white px-4 py-10">
-          <span class="relative inline-flex flex-col items-center leading-none">
-            <span class="font-display text-4xl font-bold tracking-[0.04em] text-[#111318]">KCS</span>
-            <span class="mt-1 block h-[3px] w-full bg-[#2762e9]"></span>
-            <span aria-hidden="true" class="reflection-copy absolute top-full mt-1 font-display text-4xl font-bold leading-none tracking-[0.04em] text-[#111318]">KCS</span>
-          </span>
-        </div>
-      </div>
-
-      <!-- Row: chevron tile G -->
-      <div class="grid grid-cols-3 divide-x divide-stone-200 border-b border-stone-200">
-        <div class="flex items-center justify-center bg-[#0a0a0a] px-4 py-8">
-          <svg viewBox="0 0 100 100" class="h-16" role="img" aria-label="Chevron tile, white on ink">
-            <rect width="100" height="100" fill="#0a0a0a" stroke="#ffffff" stroke-width="4"></rect>
-            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
-            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#ffffff" stroke-width="16"></path>
-          </svg>
-        </div>
-        <div class="flex items-center justify-center bg-[#0d1b2e] px-4 py-8">
-          <svg viewBox="0 0 100 100" class="h-16" role="img" aria-label="Chevron tile, blue on navy">
-            <rect width="100" height="100" fill="#16263c"></rect>
-            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
-            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#2762e9" stroke-width="16"></path>
-          </svg>
-        </div>
-        <div class="flex items-center justify-center bg-white px-4 py-8">
-          <svg viewBox="0 0 100 100" class="h-16" role="img" aria-label="Chevron tile, ink on light">
-            <rect width="100" height="100" fill="#111318"></rect>
-            <rect x="20" y="18" width="14" height="64" fill="#ffffff"></rect>
-            <path d="M76 24 L50 50 L76 76" fill="none" stroke="#2762e9" stroke-width="16"></path>
-          </svg>
-        </div>
-      </div>
-
-      <!-- Row: mirror K I -->
-      <div class="grid grid-cols-3 divide-x divide-stone-200">
-        <div class="flex items-center justify-center bg-[#0a0a0a] px-4 py-8">
-          <svg viewBox="0 0 100 110" class="h-20" role="img" aria-label="Mirror K, white on ink">
-            <g fill="#ffffff">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-            <rect x="22" y="55" width="56" height="3" fill="#ffffff"></rect>
-            <g fill="#ffffff" opacity="0.25" transform="translate(0,113) scale(1,-1)">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-          </svg>
-        </div>
-        <div class="flex items-center justify-center bg-[#0d1b2e] px-4 py-8">
-          <svg viewBox="0 0 100 110" class="h-20" role="img" aria-label="Mirror K, blue line on navy">
-            <g fill="#ffffff">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-            <rect x="22" y="55" width="56" height="3" fill="#2762e9"></rect>
-            <g fill="#ffffff" opacity="0.22" transform="translate(0,113) scale(1,-1)">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-          </svg>
-        </div>
-        <div class="flex items-center justify-center bg-white px-4 py-8">
-          <svg viewBox="0 0 100 110" class="h-20" role="img" aria-label="Mirror K, ink on light">
-            <g fill="#111318">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-            <rect x="22" y="55" width="56" height="3" fill="#2762e9"></rect>
-            <g fill="#111318" opacity="0.2" transform="translate(0,113) scale(1,-1)">
-              <rect x="30" y="8" width="14" height="44"></rect>
-              <polygon points="44,32 62,8 76,8 58,32"></polygon>
-              <polygon points="44,32 58,32 76,52 62,52"></polygon>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    <!-- Photo rotator demo -->
-    <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Photo Rotator · Demo</h2>
-    <p class="mt-2 max-w-2xl text-stone-600">
-      The rotating job-photo gallery (per Fidel's request, inspired by EH Clean) — built and ready. These frames are
-      placeholders; the section goes live on the homepage automatically the day real crew photos are added. Slow
-      crossfade, manual arrows, pauses on hover.
-    </p>
-    <div class="mt-6 max-w-2xl">
-      <PhotoRotator images={demoImages} />
     </div>
 
     <!-- Palette -->
     <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Palette</h2>
     <p class="mt-2 max-w-2xl text-stone-600">
-      Work-shirt green, lobby brass, warm stone neutrals. Deliberately not the tech-blue every competitor uses.
+      The approved green colorway: work-shirt pine, lobby brass, warm stone neutrals.
     </p>
     <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
       {
@@ -608,28 +155,19 @@ const palette = [
     <h2 class="mt-16 font-display text-2xl font-bold uppercase text-pine-900">Typography</h2>
     <div class="mt-6 space-y-6">
       <div class="border border-stone-200 p-6">
-        <p class="eyebrow text-brass-600">Display — Barlow Condensed Bold</p>
-        <p class="mt-2 font-display text-5xl font-bold uppercase leading-none text-pine-900">
-          The cleanest floors in Northern California
-        </p>
+        <p class="eyebrow text-brass-600">Logo — Orbitron Black</p>
+        <p class="cut-wordmark mt-3 text-pine-900" style="font-size:2.6rem"><span class="text-brass-600">K</span>CS</p>
         <p class="mt-3 text-sm text-stone-500">
-          Barlow is drawn from California public signage — highway signs, license plates. A California trade company
-          set in California letters.
+          The squared industrial face from the approved comps — used for the logo only.
         </p>
       </div>
       <div class="border border-stone-200 p-6">
-        <p class="eyebrow text-brass-600">Body — Barlow</p>
-        <p class="mt-2 max-w-2xl text-lg text-stone-700">
-          Every facility is different, so we start with a free walkthrough. We look at square footage, floor types,
-          traffic, and your schedule, then send a flat monthly or per-job quote.
+        <p class="eyebrow text-brass-600">Display — Barlow Condensed Bold · Body — Barlow · Labels — IBM Plex Mono</p>
+        <p class="mt-2 font-display text-3xl font-bold uppercase text-pine-900">The cleanest floors in Northern California</p>
+        <p class="mt-2 max-w-2xl text-stone-700">
+          Every facility is different, so we start with a free walkthrough and send a flat monthly or per-job quote.
         </p>
-      </div>
-      <div class="border border-stone-200 p-6">
-        <p class="eyebrow text-brass-600">Labels — IBM Plex Mono</p>
-        <p class="eyebrow mt-3 text-pine-700">Work order № 001 · Licensed · Bonded · Insured · Night crew</p>
-        <p class="mt-3 text-sm text-stone-500">
-          The mono face gives labels the register of a work order / sign-off sheet — the paperwork of the trade.
-        </p>
+        <p class="eyebrow mt-3 text-pine-700">Work order № 001 · Licensed · Bonded · Insured</p>
       </div>
     </div>
   </section>
@@ -641,13 +179,54 @@ const palette = [
     font-weight: 900;
     font-size: 4rem;
     line-height: 1;
-    letter-spacing: 0.06em;
-  }
-  .rec-orbitron {
-    font-family: "Orbitron", sans-serif;
-    font-weight: 900;
-    font-size: 3.2rem;
-    line-height: 1;
     letter-spacing: 0.04em;
+  }
+
+  /* F3 — solid diagonal extrusion, sign-shop dimensional letters */
+  .f-extrude {
+    text-shadow:
+      1px 1px 0 #071912, 2px 2px 0 #071912, 3px 3px 0 #071912, 4px 4px 0 #071912,
+      5px 5px 0 #071912, 6px 6px 0 #071912, 7px 7px 0 #071912, 8px 8px 0 #071912,
+      9px 9px 0 #071912, 10px 10px 0 #071912, 12px 14px 24px rgba(0, 0, 0, 0.45);
+  }
+  .f-extrude .k {
+    color: var(--color-brass-500);
+    text-shadow:
+      1px 1px 0 #6b5222, 2px 2px 0 #6b5222, 3px 3px 0 #6b5222, 4px 4px 0 #6b5222,
+      5px 5px 0 #6b5222, 6px 6px 0 #6b5222, 7px 7px 0 #6b5222, 8px 8px 0 #6b5222,
+      9px 9px 0 #6b5222, 10px 10px 0 #6b5222, 12px 14px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  /* F4 — floating with a soft grounded shadow */
+  .f-float {
+    text-shadow: 0 12px 28px rgba(11, 33, 26, 0.35), 0 3px 8px rgba(11, 33, 26, 0.22);
+  }
+
+  /* F5 — machined metal: brushed gradients + bevel edge light */
+  .f-metal {
+    background: linear-gradient(175deg, #ffffff 0%, #d7ddd9 35%, #9fA8a3 50%, #e8ecea 65%, #b9c1bd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.25)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
+  }
+  .f-metal .k {
+    background: linear-gradient(175deg, #f0dfa8 0%, #c09a3e 40%, #8a6d2b 55%, #e3c878 70%, #a5812f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* F6 — LED backlit halo: warm glow behind the K, cool behind CS */
+  .f-backlit {
+    text-shadow:
+      0 0 18px rgba(255, 255, 255, 0.55), 0 0 46px rgba(220, 235, 228, 0.35),
+      0 0 90px rgba(200, 225, 214, 0.22), 0 2px 3px rgba(0, 0, 0, 0.8);
+  }
+  .f-backlit .k {
+    color: var(--color-brass-400);
+    text-shadow:
+      0 0 18px rgba(192, 154, 62, 0.8), 0 0 46px rgba(192, 154, 62, 0.5),
+      0 0 90px rgba(192, 154, 62, 0.3), 0 2px 3px rgba(0, 0, 0, 0.8);
   }
 </style>
