@@ -349,7 +349,7 @@ export const cities: City[] = [
     region: "san-francisco",
     zip: "94104",
     intro:
-      "Downtown San Francisco remains the West Coast's most concentrated commercial district, and it is where KCS focuses its city service. The Financial District's towers along Montgomery and California Streets house banks, law firms, and corporate headquarters; SoMa's converted warehouses and modern high-rises hold tech offices and showrooms; Union Square drives flagship retail and hospitality; and Nob Hill crowns it all with historic hotels, private clubs, and institutions like Grace Cathedral and the Cathedral School for Boys — a KCS client. From Embarcadero Center to Salesforce Tower, downtown buildings demand janitorial vendors who can pass building-management vetting, work around tenant schedules, and hold a consistent standard floor after floor. That is precisely the service KCS delivers.",
+      "Downtown San Francisco remains the West Coast's most concentrated commercial district, and it is where KCS focuses its city service. The Financial District's towers along Montgomery and California Streets house banks, law firms, and corporate headquarters; SoMa's converted warehouses and modern high-rises hold tech offices and showrooms; Union Square drives flagship retail and hospitality; and Nob Hill crowns it all with historic hotels, private clubs, and landmark institutions like Grace Cathedral. From Embarcadero Center to Salesforce Tower, downtown buildings demand janitorial vendors who can pass building-management vetting, work around tenant schedules, and hold a consistent standard floor after floor. That is precisely the service KCS delivers.",
     businessLandscape:
       "Downtown San Francisco's commercial stock runs from trophy office towers in the Financial District and Transbay area to boutique mid-rises on Nob Hill and creative brick-and-timber space in SoMa. Institutional property managers oversee most buildings, with strict insurance, access, and scope requirements. Private schools, churches, athletic clubs, and street-level retail round out a dense, high-expectation market concentrated within a few walkable square miles.",
     districts: [
@@ -362,7 +362,7 @@ export const cities: City[] = [
     landmarks: [
       "Salesforce Tower",
       "Embarcadero Center",
-      "Grace Cathedral and the Cathedral School for Boys",
+      "Grace Cathedral",
       "Ferry Building",
       "Transamerica Pyramid",
     ],

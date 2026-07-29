@@ -11,9 +11,9 @@ export const industries: Industry[] = [
       "Commercial office cleaning for Class-A buildings and multi-tenant suites across the Bay Area. Night crews, 14+ years of floor care. Get a free quote.",
     heroHeadline: "Office Cleaning That Keeps Tenants Renewing",
     heroSub:
-      "From Class-A properties like 111 Deerwood in San Ramon to multi-tenant suites across the East Bay, KCS delivers consistent nightly janitorial service and the region's most experienced floor care crews.",
+      "From Class-A towers to multi-tenant suites across the East Bay, KCS delivers consistent nightly janitorial service and the region's most experienced floor care crews.",
     overview: [
-      "An office building's cleaning program is one of the few line items tenants judge every single day. Streaked lobby glass, dull VCT in the corridors, or an overflowing break-room bin shows up in tenant satisfaction surveys long before it shows up in a walkthrough. KCS has spent more than 14 years cleaning commercial offices across the East Bay, Tri-Valley, downtown San Francisco, Solano County, and the Sacramento and Central Valley markets — including Class-A properties like 111 Deerwood in San Ramon, where the standard is set by the lobby finish, not the janitor's closet.",
+      "An office building's cleaning program is one of the few line items tenants judge every single day. Streaked lobby glass, dull VCT in the corridors, or an overflowing break-room bin shows up in tenant satisfaction surveys long before it shows up in a walkthrough. KCS has spent more than 14 years cleaning commercial offices across the East Bay, Tri-Valley, downtown San Francisco, Solano County, and the Sacramento and Central Valley markets — including Class-A properties where the standard is set by the lobby finish, not the janitor's closet.",
       "Our crews work nights and weekends on a fixed scope you approve in writing: trash and recycling, restroom sanitation, kitchen and break areas, dusting rotations, and entry glass. Because floor care is our founding specialty, your VCT, carpet, stone, and polished concrete are maintained on a scheduled program — burnishing, low-moisture carpet extraction, and periodic strip-and-wax — rather than left to degrade until a tenant complains.",
       "Every KCS crew is licensed, bonded, and insured, and we build our schedules around your building's access procedures, alarm codes, and freight elevator windows. Property managers get one point of contact, documented scope, and a service log they can actually show ownership.",
     ],
@@ -79,15 +79,15 @@ export const industries: Industry[] = [
     name: "Private & Charter Schools",
     slug: "private-schools",
     blurb:
-      "Trusted by Grace Cathedral School for Boys. Background-checked night crews, gym floor care, and cleaning schedules built around the academic calendar.",
+      "Background-checked night crews, gym floor care, and cleaning schedules built around the academic calendar.",
     metaTitle: "Private School Cleaning Services | KCS",
     metaDescription:
       "Janitorial and floor care for private and charter schools. Background-checked crews, gym floor programs, summer deep cleans. Request a campus walkthrough.",
     heroHeadline: "Campus Cleaning Parents Notice — For All the Right Reasons",
     heroSub:
-      "KCS cleans Grace Cathedral School for Boys and understands what independent schools require: background-checked crews, work scheduled around school hours, and floors that survive a thousand pairs of sneakers.",
+      "KCS understands what independent schools require: background-checked crews, work scheduled around school hours, and floors that survive a thousand pairs of sneakers.",
     overview: [
-      "Private and charter schools are judged by families the moment they walk the campus. Admissions tours, back-to-school nights, and board visits all happen in the same hallways students fill with backpacks, lunch spills, and gym shoes six hours earlier. KCS cleans Grace Cathedral School for Boys, and that engagement shaped how we serve independent schools: crews are background-checked, work happens after dismissal or on weekends, and nothing on our schedule ever collides with instruction, aftercare, or campus events.",
+      "Private and charter schools are judged by families the moment they walk the campus. Admissions tours, back-to-school nights, and board visits all happen in the same hallways students fill with backpacks, lunch spills, and gym shoes six hours earlier. Serving independent schools has shaped how our crews operate: they are background-checked, work happens after dismissal or on weekends, and nothing on our schedule ever collides with instruction, aftercare, or campus events.",
       "Classrooms get nightly attention — desks, sinks, floors, and the touchpoints kids actually touch — while restrooms and cafeterias are sanitized on a documented rotation. Gymnasium floors are a specialty of their own: wood courts need dust-mopping and auto-scrubbing with the right chemistry so finishes aren't destroyed, and multipurpose VCT needs periodic strip-and-wax timed to breaks in the athletic calendar.",
       "The academic calendar is our project calendar. Summer, winter, and spring breaks are when we schedule deep cleans, carpet extraction, and full floor restoration, so students return to a campus that looks the way the head of school wants it photographed. One vendor, one point of contact, and a scope your business office can actually audit.",
     ],
@@ -150,7 +150,7 @@ export const industries: Industry[] = [
       },
       {
         q: "Do you already work with schools?",
-        a: "Yes. KCS cleans Grace Cathedral School for Boys, a private school, and we service Grace Cathedral itself. School administrators are welcome to ask us about that experience during a walkthrough.",
+        a: "Yes. KCS services independent school campuses, including gym floors and athletic facilities. School administrators are welcome to ask about that experience during a walkthrough.",
       },
     ],
   },
@@ -305,15 +305,15 @@ export const industries: Industry[] = [
     name: "Churches & Places of Worship",
     slug: "churches-places-of-worship",
     blurb:
-      "Trusted by Grace Cathedral. Sanctuary stone and hardwood floor care, weekly service resets, and fast turnarounds between weddings, funerals, and worship.",
+      "Sanctuary stone and hardwood floor care, weekly service resets, and fast turnarounds between weddings, funerals, and worship.",
     metaTitle: "Church Cleaning Services | KCS",
     metaDescription:
-      "Cleaning for churches and places of worship: sanctuary floor care, event turnarounds, respectful crews. Trusted by Grace Cathedral. Request a walkthrough.",
+      "Cleaning for churches and places of worship: sanctuary floor care, event turnarounds, respectful crews. Request a walkthrough.",
     heroHeadline: "A Sanctuary Should Look the Way It Feels",
     heroSub:
-      "KCS serves Grace Cathedral, and we bring the same care to every congregation: respectful crews, specialty stone and hardwood floor programs, and turnarounds that keep pace with weddings, funerals, and weekly worship.",
+      "KCS brings the same care to every congregation: respectful crews, specialty stone and hardwood floor programs, and turnarounds that keep pace with weddings, funerals, and weekly worship.",
     overview: [
-      "A place of worship carries a different weight than any other building we clean. The spaces are often historic, the finishes irreplaceable, and the calendar unforgiving — Sunday comes every week, and between services the same rooms host weddings, funerals, concerts, and community meals. KCS serves Grace Cathedral, and that work taught us how to operate in sacred spaces: crews who treat the sanctuary, altar area, and memorial spaces with respect, and who know which items are never to be moved without permission.",
+      "A place of worship carries a different weight than any other building we clean. The spaces are often historic, the finishes irreplaceable, and the calendar unforgiving — Sunday comes every week, and between services the same rooms host weddings, funerals, concerts, and community meals. Serving houses of worship has taught us how to operate in sacred spaces: crews who treat the sanctuary, altar area, and memorial spaces with respect, and who know which items are never to be moved without permission.",
       "Sanctuary floors are usually the most demanding surface on the property. Marble and natural stone aisles need honing and polishing rather than coatings; historic hardwood needs finish-safe care; and carpeted naves collect candle wax, communion spills, and the traffic of hundreds of congregants. Floor care has been our specialty for over 14 years, and it's often the reason congregations call us first.",
       "Beyond the sanctuary, we maintain fellowship halls, classrooms, offices, kitchens, and restrooms on a weekly rhythm timed to your worship schedule — and we handle event turnarounds, resetting a hall after a Saturday reception so it's ready for Sunday morning. Licensed, bonded, and insured, with pricing that respects a congregation's budget.",
     ],
@@ -355,7 +355,7 @@ export const industries: Industry[] = [
     faqs: [
       {
         q: "Have you worked in historic or sacred spaces before?",
-        a: "Yes — KCS serves Grace Cathedral, and we clean other congregations across the region. Our crews are briefed on each space's protocols: which areas require special handling, which items are never moved, and how to work respectfully around clergy and staff.",
+        a: "Yes — KCS cleans congregations across the region. Our crews are briefed on each space's protocols: which areas require special handling, which items are never moved, and how to work respectfully around clergy and staff.",
       },
       {
         q: "Can you restore our sanctuary's marble or stone floors?",
@@ -462,7 +462,7 @@ export const industries: Industry[] = [
       "Stop managing six janitorial companies with six invoices and six excuses. KCS services entire portfolios across the Bay Area, Sacramento, and the Central Valley — with one contact, one standard, and proven Class-A experience.",
     overview: [
       "Every property manager knows the math: each additional janitorial vendor means another contract to negotiate, another insurance certificate to chase, another quality standard to police, and another phone number to call when a tenant complains. KCS consolidates that. We service portfolios across the East Bay, Tri-Valley, downtown San Francisco, Solano County, Sacramento, and the Central Valley — office buildings, retail, medical suites, and mixed-use — under one master relationship with per-property scopes.",
-      "Our Class-A credentials are proven, not promised: KCS services 111 Deerwood in San Ramon, and our night crews hold that standard across every property class. Where a building needs daytime presence, we provide day porter-style support — lobby touch-ups, restroom checks, spill response, and event support — so the property looks managed at 2 p.m., not just at 2 a.m.",
+      "Our Class-A credentials are proven, not promised: our night crews hold Class-A standards across every property class. Where a building needs daytime presence, we provide day porter-style support — lobby touch-ups, restroom checks, spill response, and event support — so the property looks managed at 2 p.m., not just at 2 a.m.",
       "Tenant turnover is where we save managers the most time. When a suite goes vacant, our crews handle the turnover clean — floors restored, carpets extracted, glass detailed, every surface brought to showing condition — on a fast turnaround, so your leasing team is touring the space instead of waiting on a vendor. Fourteen-plus years of floor care expertise means the most expensive surfaces in your buildings are handled by specialists, not subcontractors.",
     ],
     painPoints: [

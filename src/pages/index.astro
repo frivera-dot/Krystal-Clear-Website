@@ -89,11 +89,6 @@ const homeFaqs = [
             {SITE.phone}
           </a>
         </div>
-        <div class="mt-9 border-t border-pine-100/15 pt-4">
-          <p class="eyebrow text-pine-300">
-            Trusted by&ensp;{SITE.featuredClients.map((c) => c.name).join("  ·  ")}
-          </p>
-        </div>
       </div>
       <div class="lg:pl-4">
         <QuoteForm />
@@ -246,16 +241,20 @@ const homeFaqs = [
           That's why the buildings that can't compromise — private schools, cathedrals, Class-A offices — hire KCS.
         </p>
         {/* TODO: replace this panel with a real job-site photo when the client sends assets */}
-        <div class="relative mt-8 hidden overflow-hidden bg-pine-950 px-8 pb-6 pt-10 lg:block">
-          <p class="eyebrow text-brass-300">Trusted by</p>
-          {
-            SITE.featuredClients.map((c) => (
-              <p class="mt-3 border-b border-pine-100/10 pb-3 last:border-0">
-                <span class="block font-display text-xl font-bold uppercase text-white">{c.name}</span>
-                <span class="text-sm text-pine-300">{c.location}</span>
-              </p>
-            ))
-          }
+        <div class="relative mt-8 hidden overflow-hidden bg-pine-950 px-8 pb-8 pt-10 lg:block">
+          <p class="eyebrow text-brass-300">The short version</p>
+          <p class="mt-3 border-b border-pine-100/10 pb-3">
+            <span class="block font-display text-xl font-bold uppercase text-white">{SITE.yearsFloorExperience}+ Years on Floors</span>
+            <span class="text-sm text-pine-300">VCT, concrete, marble &amp; natural stone</span>
+          </p>
+          <p class="mt-3 border-b border-pine-100/10 pb-3">
+            <span class="block font-display text-xl font-bold uppercase text-white">50+ Cities Covered</span>
+            <span class="text-sm text-pine-300">San Francisco to Sacramento to Modesto</span>
+          </p>
+          <p class="mt-3">
+            <span class="block font-display text-xl font-bold uppercase text-white">100% Commercial</span>
+            <span class="text-sm text-pine-300">Licensed, bonded &amp; insured</span>
+          </p>
         </div>
       </div>
       <div class="divide-y divide-stone-200 border-y border-stone-200">

@@ -125,11 +125,11 @@ export const services: Service[] = [
       "Professional office cleaning for suites and Class-A buildings across the Bay Area & Sacramento. Night crews, flat monthly rates. Call (925) 301-5566.",
     heroHeadline: "An Office That Looks Like You Care — Every Single Morning",
     heroSub:
-      "Nightly and weekly cleaning programs for office suites, multi-tenant floors, and full commercial buildings. We service Class-A properties like 111 Deerwood in San Ramon, and we bring that standard everywhere.",
+      "Nightly and weekly cleaning programs for office suites, multi-tenant floors, and full commercial buildings. We service Class-A properties, and we bring that standard everywhere.",
     overview: [
       "An office tells visitors what to expect from the company inside it. Streaked entry glass, gritty restroom floors, and overflowing recycling bins undo a lot of expensive branding. KCS runs office cleaning programs built for how offices actually get dirty: high-touch areas like door handles, elevator panels, and conference tables get attention every visit; restrooms get full sanitation with disinfectant dwell times actually observed; kitchens and breakrooms get degreased, not just wiped.",
       "Our crews work after hours, so cleaning never interrupts a workday, a client meeting, or a sales call. We use microfiber systems and HEPA-filtered vacuums that capture dust instead of redistributing it, and color-coded cloths so restroom chemistry never touches a desk. Hard-surface floors in lobbies and corridors get maintained under our floor-care program — dust mopped, auto-scrubbed, and periodically buffed — which is the difference between an office that photographs well and one that just passed inspection.",
-      "We service everything from single professional suites to Class-A multi-tenant buildings such as 111 Deerwood in San Ramon, across the East Bay, Tri-Valley, San Francisco, Solano County, Sacramento, and the Central Valley. Walkthroughs are free and quotes are flat monthly numbers.",
+      "We service everything from single professional suites to Class-A multi-tenant buildings across the East Bay, Tri-Valley, San Francisco, Solano County, Sacramento, and the Central Valley. Walkthroughs are free and quotes are flat monthly numbers.",
     ],
     features: [
       {

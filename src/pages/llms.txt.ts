@@ -14,7 +14,6 @@ export const GET: APIRoute = () => {
     `> ${SITE.legalName} ("KCS") is a licensed, bonded, and insured commercial cleaning company headquartered at ${SITE.address.street}, ${SITE.address.city}, ${SITE.address.state} ${SITE.address.zip}. Commercial facilities only — no residential. Specialty: floor care (${SITE.yearsFloorExperience}+ years — VCT stripping & waxing, concrete polishing, marble & natural stone restoration). Night and weekend crews. Phone: ${SITE.phone}.`,
     ``,
     `Service area: ${SITE.serviceAreaSummary} — ${cities.length} cities across ${regions.map((r) => r.name).join(", ")}.`,
-    `Notable clients: ${SITE.featuredClients.map((c) => `${c.name} (${c.location})`).join("; ")}.`,
     ``,
     `## Services`,
     ...services.map((s) => `- [${s.name}](${SITE.domain}/services/${s.slug}/): ${s.blurb}`),

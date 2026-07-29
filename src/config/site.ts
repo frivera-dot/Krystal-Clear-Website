@@ -22,6 +22,9 @@ export const SITE = {
   yearsFloorExperience: 14,
   serviceAreaSummary:
     "The East Bay, Tri-Valley, downtown San Francisco, Solano County, Sacramento, and the Central Valley",
+  // Not currently displayed anywhere — the list is too short to showcase
+  // (the cathedral + its school read as one campus). Re-enable the
+  // "Trusted by" panels when there are ~5+ distinct clients to show.
   featuredClients: [
     { name: "Grace Cathedral School for Boys", location: "San Francisco" },
     { name: "Grace Cathedral", location: "San Francisco" },
