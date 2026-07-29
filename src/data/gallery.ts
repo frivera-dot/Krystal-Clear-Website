@@ -47,4 +47,29 @@ export const gallery: GalleryImage[] = [
     alt: "Glossy finished floor in an industrial controlled environment",
     caption: "Industrial floor, finished for a controlled environment",
   },
+  {
+    src: "/gallery/school-hallway-burnished.jpg",
+    alt: "School hallway VCT floor burnished to a mirror shine",
+    caption: "School corridor VCT — burnished to a mirror",
+  },
+  {
+    src: "/gallery/makerspace-vct.jpg",
+    alt: "Colorful checkered VCT classroom floor with a fresh wet-look finish",
+    caption: "Makerspace VCT — fresh finish, full wet look",
+  },
+  {
+    src: "/gallery/classroom-reset.jpg",
+    alt: "Classroom with chairs up on tables after overnight cleaning",
+    caption: "Classroom reset — chairs up, floors done, ready for morning",
+  },
+  {
+    src: "/gallery/art-studio.jpg",
+    alt: "School art studio with a cleaned and polished hardwood floor",
+    caption: "Art studio hardwood — cleaned around the creative mess",
+  },
+  {
+    src: "/gallery/strip-in-progress.jpg",
+    alt: "Floor strip-out in progress in a school classroom",
+    caption: "Strip-out in progress — old finish coming off",
+  },
 ];
