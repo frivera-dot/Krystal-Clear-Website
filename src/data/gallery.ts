@@ -72,4 +72,24 @@ export const gallery: GalleryImage[] = [
     alt: "Floor strip-out in progress in a school classroom",
     caption: "Strip-out in progress — old finish coming off",
   },
+  {
+    src: "/gallery/vet-lobby.jpg",
+    alt: "Veterinary hospital reception lobby with cleaned wood-look floors",
+    caption: "Veterinary hospital lobby — front of house, client-ready",
+  },
+  {
+    src: "/gallery/vet-treatment.jpg",
+    alt: "Veterinary treatment area with clean resilient sheet flooring",
+    caption: "Clinic treatment area — cleaned and sanitized nightly",
+  },
+  {
+    src: "/gallery/vet-exam-room.jpg",
+    alt: "Veterinary exam room with clean wood-look plank flooring",
+    caption: "Exam room turnover — disinfected and reset",
+  },
+  {
+    src: "/gallery/vet-corridor.jpg",
+    alt: "Clinic corridor with clean resilient flooring",
+    caption: "Clinic corridor — resilient floors on a maintenance program",
+  },
 ];
