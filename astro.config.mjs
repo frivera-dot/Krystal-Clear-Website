@@ -12,5 +12,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [sitemap({ filter: (page) => !page.includes('/brand/') && !page.includes('/thank-you/') && !page.includes('/preview-blue/') })]
+  integrations: [sitemap({ filter: (page) => !page.includes('/brand/') && !page.includes('/thank-you/') && !page.includes('/preview-blue/') && !page.includes('/preview-f5/') })]
 });

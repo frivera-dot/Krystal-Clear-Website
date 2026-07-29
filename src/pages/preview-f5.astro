@@ -1,0 +1,367 @@
+---
+import "@fontsource/orbitron/900.css";
+import Layout from "../layouts/Layout.astro";
+import TrustBar from "../components/TrustBar.astro";
+import QuoteForm from "../components/QuoteForm.astro";
+import CTABand from "../components/CTABand.astro";
+import FAQSection from "../components/FAQSection.astro";
+import PhotoRotator from "../components/PhotoRotator.astro";
+import { SITE } from "../config/site";
+import { services } from "../data/services";
+import { industries } from "../data/industries";
+import { regions } from "../data/regions";
+import { citiesInRegion } from "../data/cities";
+import { gallery } from "../data/gallery";
+
+const coreServices = services.filter((s) => s.isCore);
+const specialtyServices = services.filter((s) => !s.isCore);
+
+const homeFaqs = [
+  {
+    q: "Do you offer residential cleaning?",
+    a: "No — KCS is 100% commercial. We clean offices, schools, medical facilities, gyms, churches, HOA common areas, and retail spaces. Keeping our focus commercial means our crews, equipment, and processes are built for business facilities.",
+  },
+  {
+    q: "What areas do you serve?",
+    a: `We serve ${SITE.serviceAreaSummary} — from our Pleasant Hill headquarters we cover Contra Costa County, the Tri-Valley, Oakland and the East Bay, downtown San Francisco, Solano County, the Sacramento area, and the Central Valley down to Modesto.`,
+  },
+  {
+    q: "How does pricing work?",
+    a: "Every facility is different, so we start with a free walkthrough. We look at square footage, floor types, traffic, and your schedule, then send a flat monthly or per-job quote. No hidden fees and no lock-in surprises.",
+  },
+  {
+    q: "Are you licensed and insured?",
+    a: "Yes — KCS is licensed, bonded, and insured. We're happy to provide certificates of insurance for your property manager or building requirements before we start.",
+  },
+  {
+    q: "Can you clean after hours?",
+    a: "Absolutely. Most of our janitorial accounts are serviced at night or on weekends so your business never skips a beat. Day porter-style visits are available too.",
+  },
+  {
+    q: "What makes KCS different from other janitorial companies?",
+    a: `Floors. Our founder spent ${SITE.yearsFloorExperience}+ years mastering floor care — stripping and waxing, concrete polishing, marble and stone restoration — before building KCS. Most janitorial companies subcontract floor work; we're the specialists others call.`,
+  },
+];
+---
+
+<Layout
+  title="KCS — F5 Opening Page Preview (Internal)"
+  description="Internal preview: F5 machined-metal logo as a full-screen opening, site content on scroll."
+  noindex
+>
+  <!-- F5 full-screen opener: the logo is all you see until you scroll.
+       Covers the header (z-60 > sticky z-50) and scrolls away naturally. -->
+  <div class="h-svh" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 top-0 z-[60] flex h-svh flex-col items-center justify-center gap-6 bg-[linear-gradient(160deg,#1a3b2d_0%,#0b211a_70%)] px-6">
+    <p class="cut-wordmark f-metal"><span class="k">K</span>CS</p>
+    <div class="text-center">
+      <p class="font-display text-base font-semibold uppercase tracking-[0.42em] text-white/90 sm:text-lg">Krystal Clear Service</p>
+      <p class="eyebrow mt-2 text-brass-300">Commercial Janitorial · Floor Care</p>
+    </div>
+    <a
+      href="#site-start"
+      aria-label="Scroll to site content"
+      class="absolute bottom-8 flex h-11 w-11 items-center justify-center border border-white/25 text-white/80 hover:border-brass-400 hover:text-brass-300"
+    >
+      <svg class="scroll-cue h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Hero: the wet-floor reflection is the signature -->
+  <section id="site-start" class="relative scroll-mt-0 overflow-hidden bg-pine-950">
+    <div class="relative mx-auto grid max-w-7xl gap-12 px-4 pb-14 pt-16 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:pb-20 lg:pt-24">
+      <div>
+        <p class="eyebrow text-brass-300">
+          Commercial janitorial &amp; floor care — Pleasant Hill, CA
+        </p>
+        <div class="mt-4 pb-24 sm:pb-20">
+          <div class="relative">
+            <h1 class="font-display text-5xl font-bold uppercase leading-[0.95] text-white sm:text-7xl">
+              Krystal clear floors.<br />
+              <span class="text-brass-400">Spotless</span> everything else.
+            </h1>
+            <div class="mt-4 h-px w-full max-w-xl bg-brass-500/70"></div>
+            <p
+              aria-hidden="true"
+              class="reflection-copy absolute left-0 top-full mt-1 w-full font-display text-5xl font-bold uppercase leading-[0.95] text-white sm:text-7xl"
+            >
+              Krystal clear floors.<br />
+              <span class="text-brass-400">Spotless</span> everything else.
+            </p>
+          </div>
+        </div>
+        <p class="relative mt-2 max-w-xl text-lg leading-relaxed text-pine-100">
+          Nightly janitorial, deep cleans, and post-construction cleanup for offices, schools, medical, gyms,
+          churches, and HOAs across Northern California — built on {SITE.yearsFloorExperience}+ years of stripping,
+          sealing, and polishing commercial floors.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/contact/"
+            class="bg-brass-500 px-7 py-4 text-center font-display text-lg font-bold uppercase tracking-wider text-pine-950 hover:bg-brass-400"
+          >
+            Schedule a Free Walkthrough
+          </a>
+          <a
+            href={SITE.phoneHref}
+            class="border border-pine-100/40 px-7 py-4 text-center font-display text-lg font-bold uppercase tracking-wider text-white hover:border-brass-400 hover:text-brass-300"
+          >
+            {SITE.phone}
+          </a>
+        </div>
+        <div class="mt-9 border-t border-pine-100/15 pt-4">
+          <p class="eyebrow text-pine-300">
+            Trusted by&ensp;{SITE.featuredClients.map((c) => c.name).join("  ·  ")}
+          </p>
+        </div>
+      </div>
+      <div class="lg:pl-4">
+        <QuoteForm />
+      </div>
+    </div>
+  </section>
+
+  <TrustBar />
+
+  <!-- Services: one featured contract + compact directory (not a wall of cards) -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="max-w-2xl">
+      <p class="eyebrow text-brass-600">What we do</p>
+      <h2 class="mt-2 text-3xl font-extrabold text-pine-900">Commercial Cleaning Services</h2>
+      <p class="mt-3 text-stone-600">
+        Everything your facility needs under one roof — recurring janitorial contracts, one-time deep cleans, and the
+        specialty floor work other companies subcontract to us.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
+      <!-- Featured: the recurring-contract flagship -->
+      <a
+        href={`/services/${coreServices[0].slug}/`}
+        class="group flex flex-col justify-between border border-pine-900/20 bg-pine-50 p-8 transition hover:border-pine-700"
+      >
+        <div>
+          <p class="eyebrow text-pine-700">Service № 01 — The recurring contract</p>
+          <h3 class="mt-3 font-display text-3xl font-bold uppercase text-pine-900 group-hover:text-brass-700">
+            {coreServices[0].name}
+          </h3>
+          <p class="mt-3 leading-relaxed text-stone-600">{coreServices[0].blurb}</p>
+          <ul class="mt-6 grid gap-2.5 sm:grid-cols-2">
+            {
+              coreServices[0].features.slice(0, 4).map((f) => (
+                <li class="flex items-start gap-2.5 text-sm text-stone-700">
+                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brass-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {f.title}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <span class="mt-8 inline-block font-display font-bold uppercase tracking-wider text-brass-700">
+          Explore janitorial contracts →
+        </span>
+      </a>
+
+      <!-- Directory: the rest, as tight rows -->
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        {
+          [...coreServices.slice(1), ...specialtyServices.filter((s) => s.slug === "commercial-floor-care")].map((s) => (
+            <a href={`/services/${s.slug}/`} class="group flex items-center justify-between gap-4 py-4">
+              <span>
+                <span class="block font-bold text-pine-900 group-hover:text-brass-700">{s.name}</span>
+                <span class="mt-0.5 block text-sm text-stone-500">{s.blurb.split(". ")[0].replace(/\.$/, "")}.</span>
+              </span>
+              <svg class="h-5 w-5 shrink-0 text-brass-600 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+              </svg>
+            </a>
+          ))
+        }
+        <p class="py-4">
+          <a href="/services/" class="font-bold text-brass-700 hover:text-brass-600">All {services.length} services →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floor care specialty -->
+  <section class="bg-pine-900">
+    <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-wider text-brass-400">Our Specialty</p>
+        <h2 class="mt-2 text-3xl font-extrabold tracking-tight text-white">
+          The Floor Care Specialists Other Companies Call
+        </h2>
+        <p class="mt-4 leading-relaxed text-pine-200">
+          Before KCS existed, our founder spent {SITE.yearsFloorExperience}+ years stripping, sealing, and polishing
+          floors across the Bay Area. That expertise is still the heart of the company: VCT stripping &amp; waxing,
+          diamond-ground concrete polishing, and marble &amp; natural stone restoration done in-house — never
+          subcontracted.
+        </p>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/services/commercial-floor-care/"
+            class="rounded-lg bg-brass-500 px-6 py-3.5 text-center font-bold text-white hover:bg-brass-400"
+          >
+            Explore Floor Care
+          </a>
+        </div>
+      </div>
+      <div class="divide-y divide-pine-100/10 border-y border-pine-100/10">
+        {
+          ["floor-stripping-and-waxing", "concrete-polishing", "marble-and-stone-polishing", "commercial-carpet-cleaning"].map(
+            (slug) => {
+              const s = services.find((x) => x.slug === slug)!;
+              return (
+                <a href={`/services/${s.slug}/`} class="group flex items-center gap-4 py-4">
+                  <svg class="h-4 w-4 shrink-0 text-brass-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                  <span>
+                    <span class="block font-bold text-white group-hover:text-brass-300">{s.shortName}</span>
+                    <span class="mt-0.5 block text-sm text-pine-300">{s.blurb.split(". ")[0].replace(/\.$/, "")}.</span>
+                  </span>
+                </a>
+              );
+            }
+          )
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- The work: job-site photo rotator. Renders automatically once
+       src/data/gallery.ts has entries (waiting on client photos). -->
+  {
+    gallery.length > 0 && (
+      <section class="border-b border-stone-200 bg-stone-50">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-[1fr_1.4fr] lg:items-center">
+          <div>
+            <p class="eyebrow text-brass-600">The work</p>
+            <h2 class="mt-2 text-3xl font-extrabold text-pine-900">Floors That Show Their Reflection</h2>
+            <p class="mt-3 leading-relaxed text-stone-600">
+              Real job sites, photographed by our crews: strip-outs brought back to a wet-look shine, burnished
+              concrete, marble maintenance nights, and clinics serviced after hours.
+            </p>
+            <a href="/contact/" class="mt-6 inline-block font-display font-bold uppercase tracking-wider text-brass-700 hover:text-brass-600">
+              Get this for your building →
+            </a>
+          </div>
+          <PhotoRotator images={gallery} />
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Industries: asymmetric split — copy + proof panel left, directory right -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:items-start">
+      <div>
+        <p class="eyebrow text-brass-600">Who we clean for</p>
+        <h2 class="mt-2 text-3xl font-extrabold text-pine-900">Facilities That Demand More Than a Mop and a Promise</h2>
+        <p class="mt-3 leading-relaxed text-stone-600">
+          Our crews are background-checked, trained by facility type, and led by a founder who still walks job sites.
+          That's why the buildings that can't compromise — private schools, cathedrals, Class-A offices — hire KCS.
+        </p>
+        {/* TODO: replace this panel with a real job-site photo when the client sends assets */}
+        <div class="relative mt-8 hidden overflow-hidden bg-pine-950 px-8 pb-6 pt-10 lg:block">
+          <p class="eyebrow text-brass-300">Trusted by</p>
+          {
+            SITE.featuredClients.map((c) => (
+              <p class="mt-3 border-b border-pine-100/10 pb-3 last:border-0">
+                <span class="block font-display text-xl font-bold uppercase text-white">{c.name}</span>
+                <span class="text-sm text-pine-300">{c.location}</span>
+              </p>
+            ))
+          }
+        </div>
+      </div>
+      <div class="divide-y divide-stone-200 border-y border-stone-200">
+        {
+          industries.map((i) => (
+            <a href={`/industries/${i.slug}/`} class="group flex items-center justify-between gap-4 py-4">
+              <span>
+                <span class="block font-bold text-pine-900 group-hover:text-brass-700">{i.name}</span>
+                <span class="mt-0.5 block text-sm text-stone-500">{i.blurb}</span>
+              </span>
+              <svg class="h-5 w-5 shrink-0 text-brass-600 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
+              </svg>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Service areas -->
+  <section class="border-t border-stone-200 bg-stone-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-extrabold tracking-tight text-pine-900">Serving Northern California</h2>
+        <p class="mt-3 text-stone-600">
+          Headquartered in Pleasant Hill with crews across {SITE.serviceAreaSummary.toLowerCase()}.
+        </p>
+      </div>
+      <div class="mt-10 columns-1 gap-10 md:columns-2 lg:columns-3">
+        {
+          regions.map((r) => (
+            <div class="mb-8 break-inside-avoid border-t-2 border-brass-500 pt-3">
+              <a
+                href={`/service-areas/${r.slug}/`}
+                class="font-display text-lg font-bold uppercase text-pine-900 hover:text-brass-700"
+              >
+                {r.name}
+              </a>
+              <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1.5">
+                {citiesInRegion(r.slug).map((c) => (
+                  <a href={`/locations/${c.slug}/`} class="text-sm text-stone-500 hover:text-brass-700">
+                    {c.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <FAQSection faqs={homeFaqs} />
+
+  <CTABand />
+</Layout>
+
+<style>
+  .cut-wordmark {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 16vw, 9rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .f-metal {
+    background: linear-gradient(175deg, #ffffff 0%, #d7ddd9 35%, #9fa8a3 50%, #e8ecea 65%, #b9c1bd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.25)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
+  }
+  .f-metal .k {
+    background: linear-gradient(175deg, #f0dfa8 0%, #c09a3e 40%, #8a6d2b 55%, #e3c878 70%, #a5812f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .scroll-cue {
+    animation: cue 2.2s ease-in-out infinite;
+  }
+  @keyframes cue {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+</style>
