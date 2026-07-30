@@ -98,67 +98,30 @@ const homeFaqs = [
 
   <TrustBar />
 
-  <!-- Services: one featured contract + compact directory (not a wall of cards) -->
+  <!-- Services: photo cards, minimal words -->
   <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
     <div class="max-w-2xl">
       <p class="eyebrow text-brass-600">What we do</p>
       <h2 class="mt-2 text-3xl font-extrabold text-pine-900">Commercial Cleaning Services</h2>
-      <p class="mt-3 text-stone-600">
-        Everything your facility needs under one roof — recurring janitorial contracts, one-time deep cleans, and the
-        specialty floor work other companies subcontract to us.
-      </p>
     </div>
-
-    <div class="mt-10 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
-      <!-- Featured: the recurring-contract flagship -->
-      <a
-        href={`/services/${coreServices[0].slug}/`}
-        class="group flex flex-col justify-between border border-pine-900/20 bg-pine-50 p-8 transition hover:border-pine-700"
-      >
-        <div>
-          <p class="eyebrow text-pine-700">Service № 01 — The recurring contract</p>
-          <h3 class="mt-3 font-display text-3xl font-bold uppercase text-pine-900 group-hover:text-brass-700">
-            {coreServices[0].name}
-          </h3>
-          <p class="mt-3 leading-relaxed text-stone-600">{coreServices[0].blurb}</p>
-          <ul class="mt-6 grid gap-2.5 sm:grid-cols-2">
-            {
-              coreServices[0].features.slice(0, 4).map((f) => (
-                <li class="flex items-start gap-2.5 text-sm text-stone-700">
-                  <svg class="mt-0.5 h-4 w-4 shrink-0 text-brass-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
-                  {f.title}
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <span class="mt-8 inline-block font-display font-bold uppercase tracking-wider text-brass-700">
-          Explore janitorial contracts →
-        </span>
-      </a>
-
-      <!-- Directory: the rest, as tight rows -->
-      <div class="divide-y divide-stone-200 border-y border-stone-200">
-        {
-          [...coreServices.slice(1), ...specialtyServices.filter((s) => s.slug === "commercial-floor-care")].map((s) => (
-            <a href={`/services/${s.slug}/`} class="group flex items-center justify-between gap-4 py-4">
-              <span>
-                <span class="block font-bold text-pine-900 group-hover:text-brass-700">{s.name}</span>
-                <span class="mt-0.5 block text-sm text-stone-500">{s.blurb.split(". ")[0].replace(/\.$/, "")}.</span>
-              </span>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        [...coreServices, ...specialtyServices.filter((s) => s.slug === "commercial-floor-care")].map((s) => (
+          <a href={`/services/${s.slug}/`} class="group border border-stone-200 bg-white transition hover:border-pine-700">
+            <img src={`/photos/services/${s.slug}.jpg`} alt={s.name} loading="lazy" class="aspect-[16/10] w-full object-cover" />
+            <span class="flex items-center justify-between gap-3 px-5 py-4">
+              <span class="font-display text-lg font-bold uppercase text-pine-900 group-hover:text-brass-700">{s.shortName}</span>
               <svg class="h-5 w-5 shrink-0 text-brass-600 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
               </svg>
-            </a>
-          ))
-        }
-        <p class="py-4">
-          <a href="/services/" class="font-bold text-brass-700 hover:text-brass-600">All {services.length} services →</a>
-        </p>
-      </div>
+            </span>
+          </a>
+        ))
+      }
     </div>
+    <p class="mt-6">
+      <a href="/services/" class="font-bold text-brass-700 hover:text-brass-600">All 11 services →</a>
+    </p>
   </section>
 
   <!-- Floor care specialty -->
@@ -194,10 +157,7 @@ const homeFaqs = [
                   <svg class="h-4 w-4 shrink-0 text-brass-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
-                  <span>
-                    <span class="block font-bold text-white group-hover:text-brass-300">{s.shortName}</span>
-                    <span class="mt-0.5 block text-sm text-pine-300">{s.blurb.split(". ")[0].replace(/\.$/, "")}.</span>
-                  </span>
+                  <span class="font-bold text-white group-hover:text-brass-300">{s.shortName}</span>
                 </a>
               );
             }
@@ -237,8 +197,7 @@ const homeFaqs = [
         <p class="eyebrow text-brass-600">Who we clean for</p>
         <h2 class="mt-2 text-3xl font-extrabold text-pine-900">Facilities That Demand More Than a Mop and a Promise</h2>
         <p class="mt-3 leading-relaxed text-stone-600">
-          Our crews are background-checked, trained by facility type, and led by a founder who still walks job sites.
-          That's why the buildings that can't compromise — private schools, cathedrals, Class-A offices — hire KCS.
+          Background-checked crews, trained by facility type, led by a founder who still walks job sites.
         </p>
         {/* TODO: replace this panel with a real job-site photo when the client sends assets */}
         <div class="relative mt-8 hidden overflow-hidden bg-pine-950 px-8 pb-8 pt-10 lg:block">
@@ -261,10 +220,7 @@ const homeFaqs = [
         {
           industries.map((i) => (
             <a href={`/industries/${i.slug}/`} class="group flex items-center justify-between gap-4 py-4">
-              <span>
-                <span class="block font-bold text-pine-900 group-hover:text-brass-700">{i.name}</span>
-                <span class="mt-0.5 block text-sm text-stone-500">{i.blurb}</span>
-              </span>
+              <span class="font-bold text-pine-900 group-hover:text-brass-700">{i.name}</span>
               <svg class="h-5 w-5 shrink-0 text-brass-600 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6l6 6-6 6" />
               </svg>
@@ -284,26 +240,23 @@ const homeFaqs = [
           Headquartered in Pleasant Hill with crews across {SITE.serviceAreaSummary.toLowerCase()}.
         </p>
       </div>
-      <div class="mt-10 columns-1 gap-10 md:columns-2 lg:columns-3">
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
         {
           regions.map((r) => (
-            <div class="mb-8 break-inside-avoid border-t-2 border-brass-500 pt-3">
-              <a
-                href={`/service-areas/${r.slug}/`}
-                class="font-display text-lg font-bold uppercase text-pine-900 hover:text-brass-700"
-              >
-                {r.name}
-              </a>
-              <div class="mt-2 flex flex-wrap gap-x-3 gap-y-1.5">
-                {citiesInRegion(r.slug).map((c) => (
-                  <a href={`/locations/${c.slug}/`} class="text-sm text-stone-500 hover:text-brass-700">
-                    {c.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+            <a
+              href={`/service-areas/${r.slug}/`}
+              class="border border-stone-200 bg-white px-5 py-3 font-display font-bold uppercase tracking-wide text-pine-900 transition hover:border-pine-700 hover:text-brass-700"
+            >
+              {r.name}
+            </a>
           ))
         }
+        <a
+          href="/locations/"
+          class="border border-brass-500 bg-brass-500 px-5 py-3 font-display font-bold uppercase tracking-wide text-pine-950 hover:bg-brass-400"
+        >
+          All 50+ Cities →
+        </a>
       </div>
     </div>
   </section>
