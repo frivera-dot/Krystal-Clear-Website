@@ -1,33 +1,18 @@
 ---
-// KCS wordmark: condensed caps over a brass "gloss line."
-// The wet-floor reflection (the full mark) is opt-in via `reflect` —
-// it needs vertical breathing room, so the compact header omits it.
+// Site logo — Concept F (client-approved): Orbitron cut wordmark, brass K.
 interface Props {
   light?: boolean;
+  /** kept for call-site compatibility; the F mark has no reflection */
   reflect?: boolean;
 }
-const { light = false, reflect = false } = Astro.props;
+const { light = false } = Astro.props;
 ---
 
 <span class="flex items-center gap-3">
-  <span class="relative inline-flex flex-col items-center leading-none">
-    <span
-      class={`font-display text-[1.7rem] font-bold tracking-[0.04em] ${light ? "text-white" : "text-pine-900"}`}
-      >KCS</span
-    >
-    <span class="mt-[1px] block h-[3px] w-full bg-brass-500"></span>
-    {
-      reflect && (
-        <span
-          aria-hidden="true"
-          class={`reflection-copy absolute top-full mt-[3px] font-display text-[1.7rem] font-bold leading-none tracking-[0.04em] ${light ? "text-white" : "text-pine-900"}`}
-        >
-          KCS
-        </span>
-      )
-    }
-  </span>
-  <span class="leading-tight">
+  <span class={`font-logo text-[1.45rem] ${light ? "text-white" : "text-pine-900"}`}
+    ><span class={light ? "text-brass-400" : "text-brass-600"}>K</span>CS</span
+  >
+  <span class={`border-l pl-3 leading-tight ${light ? "border-pine-100/25" : "border-stone-200"}`}>
     <span class={`block text-[0.95rem] font-semibold tracking-wide ${light ? "text-white" : "text-pine-900"}`}
       >Krystal Clear Service</span
     >

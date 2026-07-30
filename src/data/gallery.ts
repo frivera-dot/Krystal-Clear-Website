@@ -92,4 +92,9 @@ export const gallery: GalleryImage[] = [
     alt: "Clinic corridor with clean resilient flooring",
     caption: "Clinic corridor — resilient floors on a maintenance program",
   },
+  {
+    src: "/gallery/branded-crew.jpg",
+    alt: "Two KCS crew members in branded shirts running carpet machines in a commercial building",
+    caption: "KCS crews on site — carpet care, machines in motion",
+  },
 ];

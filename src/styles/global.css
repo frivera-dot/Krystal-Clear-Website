@@ -7,6 +7,7 @@
 @import "@fontsource/barlow-condensed/700.css";
 @import "@fontsource/ibm-plex-mono/400.css";
 @import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/orbitron/900.css";
 
 @theme {
   /*
@@ -113,4 +114,12 @@ h2 {
 :focus-visible {
   outline: 2px solid var(--color-brass-500);
   outline-offset: 2px;
+}
+
+/* The chosen logo face (Concept F): Orbitron Black, brass K */
+.font-logo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1;
 }

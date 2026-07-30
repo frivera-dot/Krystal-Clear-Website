@@ -1,4 +1,5 @@
 ---
+import "@fontsource/orbitron/900.css";
 import Layout from "../layouts/Layout.astro";
 import TrustBar from "../components/TrustBar.astro";
 import QuoteForm from "../components/QuoteForm.astro";
@@ -47,8 +48,36 @@ const homeFaqs = [
   title="Commercial Janitorial Services & Floor Care | KCS Krystal Clear Service"
   description="Commercial janitorial services & specialty floor care for the Bay Area, Sacramento & Central Valley. Licensed, bonded & insured. Free walkthrough: (925) 301-5566."
 >
+  <!-- F5 opener: fixed logo backdrop; the dark hero slides up OVER it like a
+       curtain (dark-to-dark, no gap). Entrance: rise-in + one metal sheen pass.
+       Scroll: logo recedes with a slight parallax; header/CTA fade in once the
+       curtain fully covers. -->
+  <div
+    id="f5-intro"
+    class="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-[linear-gradient(160deg,#1a3b2d_0%,#0b211a_70%)] px-6"
+  >
+    <div id="f5-logo" class="flex flex-col items-center gap-6 will-change-transform lg:gap-9">
+      <p class="cut-wordmark f-metal f5-enter relative"><span class="k">K</span>CS<span class="f5-sheen" aria-hidden="true">KCS</span></p>
+      <div class="f5-enter-2 text-center">
+        <p class="font-display text-base font-semibold uppercase tracking-[0.42em] text-white/90 sm:text-lg lg:text-2xl lg:tracking-[0.5em]">Krystal Clear Service</p>
+        <p class="eyebrow mt-2 text-brass-300 lg:text-sm">Commercial Janitorial · Floor Care</p>
+      </div>
+    </div>
+    <a
+      href="#site-start"
+      aria-label="Scroll to site content"
+      class="f5-enter-3 absolute bottom-8 flex h-11 w-11 items-center justify-center border border-white/25 text-white/80 hover:border-brass-400 hover:text-brass-300"
+    >
+      <svg class="scroll-cue h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+  </div>
+  <div id="f5-curtain" class="relative z-[70]">
+    <div class="pointer-events-none h-svh" aria-hidden="true"></div>
+
   <!-- Hero: the wet-floor reflection is the signature -->
-  <section class="relative overflow-hidden bg-pine-950">
+  <section id="site-start" class="relative scroll-mt-0 overflow-hidden bg-pine-950">
     <div class="relative mx-auto grid max-w-7xl gap-12 px-4 pb-14 pt-16 sm:px-6 lg:grid-cols-[1.15fr_1fr] lg:items-center lg:pb-20 lg:pt-24">
       <div>
         <p class="eyebrow text-brass-300">
@@ -264,4 +293,102 @@ const homeFaqs = [
   <FAQSection faqs={homeFaqs} />
 
   <CTABand />
+  </div>
 </Layout>
+
+<script>
+  const intro = document.getElementById("f5-intro");
+  const curtain = document.getElementById("f5-curtain");
+  const logo = document.getElementById("f5-logo");
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const setState = () => {
+    const vh = window.innerHeight;
+    const p = Math.min(window.scrollY / vh, 1);
+    if (logo && !reduced) {
+      logo.style.transform = `translateY(${p * -10}vh) scale(${1 - p * 0.06})`;
+      logo.style.opacity = String(1 - p * 0.35);
+    }
+    const covered = p >= 0.999;
+    intro?.classList.toggle("invisible", covered);
+    curtain?.classList.toggle("z-[70]", !covered);
+    document.documentElement.classList.toggle("f5-active", !covered);
+  };
+
+  document.addEventListener("scroll", setState, { passive: true });
+  window.addEventListener("resize", setState);
+  setState();
+</script>
+
+<style is:global>
+  /* Chrome fades in only after the opener is fully covered */
+  html.f5-active header,
+  html.f5-active [aria-label="Quick contact"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+  header,
+  [aria-label="Quick contact"] {
+    transition: opacity 0.45s ease;
+  }
+</style>
+
+<style>
+  .cut-wordmark {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 900;
+    font-size: clamp(4rem, 15vw, 12.5rem);
+    line-height: 1;
+    letter-spacing: 0.04em;
+  }
+  .f-metal {
+    background: linear-gradient(175deg, #ffffff 0%, #d7ddd9 35%, #9fa8a3 50%, #e8ecea 65%, #b9c1bd 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 1px rgba(255, 255, 255, 0.25)) drop-shadow(0 6px 14px rgba(0, 0, 0, 0.55));
+  }
+  .f-metal .k {
+    background: linear-gradient(175deg, #f0dfa8 0%, #c09a3e 40%, #8a6d2b 55%, #e3c878 70%, #a5812f 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .scroll-cue {
+    animation: cue 2.2s ease-in-out infinite;
+  }
+  @keyframes cue {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+</style>
+
+<style>
+  .f5-enter { animation: f5rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .f5-enter-2 { animation: f5rise 0.9s 0.35s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .f5-enter-3 { animation: f5fade 0.8s 1.5s ease both; }
+  @keyframes f5rise {
+    from { opacity: 0; transform: translateY(26px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes f5fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .f5-sheen {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent 42%, rgba(255, 255, 255, 0.9) 50%, transparent 58%);
+    background-size: 250% 100%;
+    background-position: 180% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: f5sheen 1.3s ease-out 0.85s 1 both;
+    pointer-events: none;
+  }
+  @keyframes f5sheen {
+    from { background-position: 180% 0; }
+    to { background-position: -80% 0; }
+  }
+</style>
