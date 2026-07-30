@@ -123,3 +123,24 @@ h2 {
   letter-spacing: 0.04em;
   line-height: 1;
 }
+
+/* Collapsible "read more" for long SEO copy — the text stays in the DOM
+   (indexed), but readers get a tight page until they opt into depth. */
+details.readmore > summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  color: var(--color-brass-700);
+}
+details.readmore > summary::-webkit-details-marker {
+  display: none;
+}
+details.readmore > summary::after {
+  content: " +";
+}
+details.readmore[open] > summary::after {
+  content: " −";
+}
+details.readmore[open] > summary {
+  margin-bottom: 0.75rem;
+}
