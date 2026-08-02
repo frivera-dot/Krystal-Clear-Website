@@ -34,8 +34,8 @@ Forms: the quote form is wired for **Netlify Forms** (`name="quote"`), redirecti
 
 ## Before launch
 
-- [ ] Confirm final domain (the "no s" domain) → update `site` in `astro.config.mjs`, `src/config/site.ts`, `public/robots.txt`
-- [ ] Confirm business email in `src/config/site.ts`
+- [x] Confirm final domain (the "no s" domain) → update `site` in `astro.config.mjs`, `src/config/site.ts`, `public/robots.txt`
+- [x] Confirm business email in `src/config/site.ts` (frivera@krystalclearservice.com)
 - [x] Real client job photos migrated from krystalclearservices.com (full export in `public/photos/originals/`). Remaining stock (Pexels): windows, gyms, churches, HOA, property-management, retail — swap when real shots exist
-- [ ] Review logo direction with client — three concepts live at `/brand/` (noindex, internal)
-- [ ] Point domain DNS at Netlify and enable form notifications
+- [x] Review logo direction with client (Concept F approved, rolled out) — three concepts live at `/brand/` (noindex, internal)
+- [x] Point domain DNS at Netlify and enable form notifications (Make webhook wired 2026-08-02)

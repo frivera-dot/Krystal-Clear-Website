@@ -9,7 +9,7 @@ export const SITE = {
   domain: "https://krystalclearservice.com",
   phone: "(925) 301-5566",
   phoneHref: "tel:+19253015566",
-  email: "info@krystalclearservice.com", // TODO: confirm with client
+  email: "frivera@krystalclearservice.com",
   address: {
     street: "2828 Contra Costa Blvd, Suite C",
     city: "Pleasant Hill",
