@@ -16,7 +16,7 @@ export const SITE = {
     state: "CA",
     zip: "94523",
   },
-  geo: { lat: 37.9668, lng: -122.0693 },
+  geo: { lat: 37.9425636, lng: -122.0603909 },
   hours: "Mon–Sat 8:00 AM – 6:00 PM · Night & weekend crews available",
   yearsInBusiness: 5,
   yearsFloorExperience: 14,

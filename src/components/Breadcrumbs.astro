@@ -27,13 +27,13 @@ const schema = {
 
 <nav aria-label="Breadcrumb" class="mx-auto max-w-7xl px-4 pt-6 sm:px-6">
   <ol class="flex flex-wrap items-center gap-1.5 text-xs text-stone-500 sm:text-sm">
-    <li><a href="/" class="hover:text-brass-700">Home</a></li>
+    <li><a href="/" class="inline-block py-1.5 hover:text-brass-700">Home</a></li>
     {
       crumbs.map((c) => (
         <li class="flex items-center gap-1.5">
           <span aria-hidden="true">/</span>
           {c.href ? (
-            <a href={c.href} class="hover:text-brass-700">
+            <a href={c.href} class="inline-block py-1.5 hover:text-brass-700">
               {c.label}
             </a>
           ) : (

@@ -144,3 +144,10 @@ details.readmore[open] > summary::after {
 details.readmore[open] > summary {
   margin-bottom: 0.75rem;
 }
+
+/* Anchor/focus scrolls must clear the fixed bottom CTA bar (visible < lg) */
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-bottom: 70px;
+  }
+}

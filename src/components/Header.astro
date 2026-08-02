@@ -30,7 +30,7 @@ const nav = [
   <div class="eyebrow mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-6">
     <p class="hidden sm:block">Licensed · Bonded · Insured — Commercial only — Night &amp; weekend crews</p>
     <p class="sm:hidden">Licensed · Bonded · Insured</p>
-    <a href={SITE.phoneHref} class="shrink-0 py-1.5 text-brass-300 hover:text-brass-200">{SITE.phone}</a>
+    <a href={SITE.phoneHref} class="-my-2 shrink-0 py-3 pl-3 font-bold text-brass-300 hover:text-brass-200 max-sm:text-sm max-sm:tracking-[0.1em]">{SITE.phone}</a>
   </div>
 </div>
 
@@ -79,6 +79,15 @@ const nav = [
         class="hidden bg-brass-500 px-4 py-2.5 font-display text-sm font-bold uppercase tracking-wider text-pine-950 hover:bg-brass-400 sm:block"
       >
         Get a Free Quote
+      </a>
+      <a
+        href={SITE.phoneHref}
+        aria-label={`Call ${SITE.phone}`}
+        class="flex h-11 w-11 items-center justify-center border border-pine-900/20 text-pine-900 hover:border-brass-500 hover:text-brass-700 lg:hidden"
+      >
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+        </svg>
       </a>
       <button
         id="mobile-menu-button"

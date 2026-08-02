@@ -28,7 +28,7 @@ const { images, interval = 4500 } = Astro.props;
     }
   </div>
   <div class="flex items-center justify-between gap-3 border-t-2 border-brass-500 bg-pine-900 px-4 py-2.5">
-    <p class="eyebrow min-w-0 flex-1 truncate text-brass-300" data-caption>{images[0]?.caption}</p>
+    <p class="eyebrow min-w-0 flex-1 text-brass-300" data-caption>{images[0]?.caption}</p>
     <div class="flex shrink-0 items-center gap-3">
       <span class="eyebrow text-pine-300" data-counter>01 / {String(images.length).padStart(2, "0")}</span>
       <button
