@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://krystalclearservice.com/sitemap-index.xml
+Sitemap: https://krystalclearservice.com/sitemap.xml
